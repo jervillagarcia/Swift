@@ -11,7 +11,7 @@
 
 @implementation SwiftTabBarNavigationController
 
-@synthesize bicSearch,ibanSearch;
+@synthesize bicSearch,ibanSearch, aboutSwift, aboutSepa;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,12 +26,18 @@
 {
     [bicSearch release];
     [ibanSearch release];
+    [aboutSwift release];
+    [aboutSepa release];
     
     [backItem1 release];
     [backItem2 release];
+    [backItem3 release];
+    [backItem4 release];
     
     [navBicSearch release];
     [navIbanSearch release];
+    [navSwift release];
+    [navSepa release];
 
     [super dealloc];
 }
@@ -46,34 +52,47 @@
 
 #pragma mark - View lifecycle
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
     unichar backArrowCode = 0x25C0;
     
     backItem1 = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithCharacters:&backArrowCode length:1] style:UIBarButtonItemStylePlain target:self action:@selector(backAction:)];
     backItem2 = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithCharacters:&backArrowCode length:1] style:UIBarButtonItemStylePlain target:self action:@selector(backAction:)];
+    backItem3 = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithCharacters:&backArrowCode length:1] style:UIBarButtonItemStylePlain target:self action:@selector(backAction:)];
+    backItem4 = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithCharacters:&backArrowCode length:1] style:UIBarButtonItemStylePlain target:self action:@selector(backAction:)];
     
+    // BIC SEARCH
     self.bicSearch = [[BicSearchViewController alloc] initWithNibName:@"BicSearchViewController" bundle:nil];
     navBicSearch = [[UINavigationController alloc] initWithRootViewController:bicSearch];
     navBicSearch.navigationBar.barStyle = UIBarStyleBlackOpaque;
     navBicSearch.navigationBar.topItem.titleView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"swift_topbar_icon.png"]] autorelease];    
-    navBicSearch.tabBarItem.image = [UIImage imageNamed:@"21-check_bic_logo.png"];
     
+    // IBAN SEARCH
     self.ibanSearch = [[IbanSearchViewController alloc] initWithNibName:@"IbanSearchViewController" bundle:nil];
     navIbanSearch = [[UINavigationController alloc] initWithRootViewController:ibanSearch];
     navIbanSearch.navigationBar.barStyle = UIBarStyleBlackOpaque;
     navIbanSearch.navigationBar.topItem.titleView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"swift_topbar_icon.png"]] autorelease];    
-    navIbanSearch.tabBarItem.image = [UIImage imageNamed:@"21-check_iban_logo.png"];
     
-    self.viewControllers = [[[NSArray alloc] initWithObjects:navBicSearch, navIbanSearch, nil] autorelease];
+    // ABOUT SWIFT
+    self.aboutSwift = [[AboutSwiftViewController alloc] initWithNibName:@"AboutSwiftViewController" bundle:nil];
+    navSwift = [[UINavigationController alloc] initWithRootViewController:aboutSwift];
+    navSwift.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    navSwift.navigationBar.topItem.titleView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"swift_topbar_icon.png"]] autorelease];    
     
-    [navBicSearch.navigationBar.topItem setLeftBarButtonItem:backItem1];
-    [navIbanSearch.navigationBar.topItem setLeftBarButtonItem:backItem2];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
+    // ABOUT SEPA
+    self.aboutSepa = [[AboutSepaViewController alloc] initWithNibName:@"AboutSepaViewController" bundle:nil];
+    navSepa = [[UINavigationController alloc] initWithRootViewController:aboutSepa];
+    navSepa.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    navSepa.navigationBar.topItem.titleView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"swift_topbar_icon.png"]] autorelease];    
+    
+    // LOAD VIEW CONTROLLERS
+    self.viewControllers = [[[NSArray alloc] initWithObjects:navBicSearch, navIbanSearch, navSwift, navSepa, nil] autorelease];
+    
+    [navBicSearch.navigationBar.topItem     setLeftBarButtonItem:backItem1];
+    [navIbanSearch.navigationBar.topItem    setLeftBarButtonItem:backItem2];
+    [navSwift.navigationBar.topItem         setLeftBarButtonItem:backItem3];
+    [navSepa.navigationBar.topItem          setLeftBarButtonItem:backItem4];
 }
 
 - (void)viewDidUnload
@@ -89,9 +108,15 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark Actions (Button
+#pragma mark Actions (Button)
 -(IBAction) backAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark Actions (Method)
+-(void)selectTab:(NSUInteger)tabIndex {
+    NSArray *viewControllers = self.viewControllers;
+    
+    [[viewControllers objectAtIndex:tabIndex] setSelected:YES];
+}
 @end

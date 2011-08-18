@@ -1,24 +1,23 @@
 //
-//  MenuViewController.m
+//  AboutSwiftViewController.m
 //  Swift
 //
-//  Created by Errol on 8/17/11.
+//  Created by James Errol Villagarcia on 8/18/11.
 //  Copyright 2011 ApplyFinancial. All rights reserved.
 //
 
-#import "MenuViewController.h"
-#import "SwiftTabBarNavigationController.h"
+#import "AboutSwiftViewController.h"
 
 
-@implementation MenuViewController
-
-@synthesize btnCheckBic, btnCheckIban, btnAboutSwift, btnAboutSepa, btnInfo;
+@implementation AboutSwiftViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
+        // Custom initialization
+        [self.tabBarItem setTitle:@"About SWIFT"];
+        [self.tabBarItem setImage:[UIImage imageNamed:@"swift_icon.png"]];
     }
     return self;
 }
@@ -38,12 +37,6 @@
 
 #pragma mark - View lifecycle
 
-- (void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:NO];
-    
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -61,16 +54,6 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
--(IBAction)clickBtnCheckBic:(id)sender {
-    
-    SwiftTabBarNavigationController *navTab = [[SwiftTabBarNavigationController alloc] initWithNibName:@"SwiftTabBarNavigationController" bundle:nil];
-    [self.navigationController pushViewController:navTab animated:NO];
-    [navTab selectTab:1];
-    [navTab release];
-
-    [self.navigationController setNavigationBarHidden:YES];
 }
 
 @end
