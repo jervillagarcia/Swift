@@ -38,6 +38,12 @@
 
 #pragma mark - View lifecycle
 
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -60,9 +66,9 @@
 -(IBAction)clickBtnCheckBic:(id)sender {
     
     SwiftTabBarNavigationController *navTab = [[SwiftTabBarNavigationController alloc] initWithNibName:@"SwiftTabBarNavigationController" bundle:nil];
-    [self.navigationController pushViewController:navTab animated:YES];
+    [self.navigationController pushViewController:navTab animated:NO];
     [navTab release];
-    
+
     [self.navigationController setNavigationBarHidden:YES];
 }
 

@@ -17,13 +17,22 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-
+        //do nothing
     }
     return self;
 }
 
 - (void)dealloc
 {
+    [bicSearch release];
+    [ibanSearch release];
+    
+    [backItem1 release];
+    [backItem2 release];
+    
+    [navBicSearch release];
+    [navIbanSearch release];
+
     [super dealloc];
 }
 
@@ -37,34 +46,34 @@
 
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
+- (void)viewWillAppear:(BOOL)animated {
+    unichar backArrowCode = 0x25C0;
+    
+    backItem1 = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithCharacters:&backArrowCode length:1] style:UIBarButtonItemStylePlain target:self action:@selector(backAction:)];
+    backItem2 = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithCharacters:&backArrowCode length:1] style:UIBarButtonItemStylePlain target:self action:@selector(backAction:)];
+    
     self.bicSearch = [[BicSearchViewController alloc] initWithNibName:@"BicSearchViewController" bundle:nil];
-    UINavigationController *navBicSearch = [[[UINavigationController alloc] initWithRootViewController:bicSearch] autorelease];
+    navBicSearch = [[UINavigationController alloc] initWithRootViewController:bicSearch];
     navBicSearch.navigationBar.barStyle = UIBarStyleBlackOpaque;
     navBicSearch.navigationBar.topItem.titleView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"swift_topbar_icon.png"]] autorelease];    
     navBicSearch.tabBarItem.image = [UIImage imageNamed:@"21-check_bic_logo.png"];
     
-    UIButton *backButton = [UIButton buttonWithType:101];
-//    [backButton addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
-    unichar backArrowCode = 0x25C0;
-    [backButton setTitle:[NSString stringWithCharacters:&backArrowCode length:1] forState:UIControlStateNormal];
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithCharacters:&backArrowCode length:1] style:UIBarButtonItemStylePlain target:self action:nil];
-
-    [navBicSearch.navigationBar.topItem setLeftBarButtonItem:backItem];
-    
     self.ibanSearch = [[IbanSearchViewController alloc] initWithNibName:@"IbanSearchViewController" bundle:nil];
-    UINavigationController *navIbanSearch = [[[UINavigationController alloc] initWithRootViewController:ibanSearch] autorelease];
+    navIbanSearch = [[UINavigationController alloc] initWithRootViewController:ibanSearch];
     navIbanSearch.navigationBar.barStyle = UIBarStyleBlackOpaque;
     navIbanSearch.navigationBar.topItem.titleView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"swift_topbar_icon.png"]] autorelease];    
     navIbanSearch.tabBarItem.image = [UIImage imageNamed:@"21-check_iban_logo.png"];
     
-//    self.tabBarController.tabBar.hidden = NO;
-//    [self.tabBarController setViewControllers:[[NSArray alloc] initWithObjects:navBicSearch, navBicSearch2, nil]];
-    self.viewControllers = [[NSArray alloc] initWithObjects:navBicSearch, navIbanSearch, nil];
-    // Do any additional setup after loading the view from its nib.
+    self.viewControllers = [[[NSArray alloc] initWithObjects:navBicSearch, navIbanSearch, nil] autorelease];
+    
+    [navBicSearch.navigationBar.topItem setLeftBarButtonItem:backItem1];
+    [navIbanSearch.navigationBar.topItem setLeftBarButtonItem:backItem2];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
 }
 
 - (void)viewDidUnload
@@ -78,6 +87,11 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark Actions (Button
+-(IBAction) backAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

@@ -13,9 +13,17 @@
 @interface SwiftTabBarNavigationController : UITabBarController {
     BicSearchViewController *bicSearch;
     IbanSearchViewController *ibanSearch;
+
+    UINavigationController *navBicSearch;
+    UINavigationController *navIbanSearch;
+    
+    UIBarButtonItem *backItem1;
+    UIBarButtonItem *backItem2;
 }
 
 @property(nonatomic, retain) BicSearchViewController *bicSearch;
 @property(nonatomic, retain) IbanSearchViewController *ibanSearch;
+
+-(IBAction) backAction:(id)sender;
 
 @end
