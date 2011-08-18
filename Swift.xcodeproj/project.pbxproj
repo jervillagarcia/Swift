@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D05EA9EA13FD130B00B8CD89 /* UISwiftTextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D05EA9E913FD130B00B8CD89 /* UISwiftTextFieldDelegate.m */; };
+		D05EA9EE13FD21C600B8CD89 /* SwiftButtonPurple.m in Sources */ = {isa = PBXBuildFile; fileRef = D05EA9ED13FD21C600B8CD89 /* SwiftButtonPurple.m */; };
+		D05EA9F213FD265800B8CD89 /* AboutSwiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D05EA9F013FD265800B8CD89 /* AboutSwiftViewController.m */; };
+		D05EA9F313FD265800B8CD89 /* AboutSwiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05EA9F113FD265800B8CD89 /* AboutSwiftViewController.xib */; };
+		D05EA9F713FD270400B8CD89 /* AboutSepaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D05EA9F513FD270300B8CD89 /* AboutSepaViewController.m */; };
+		D05EA9F813FD270400B8CD89 /* AboutSepaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05EA9F613FD270300B8CD89 /* AboutSepaViewController.xib */; };
 		D561316F13FA2D5F0026D7BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D561316E13FA2D5F0026D7BF /* UIKit.framework */; };
 		D561317113FA2D5F0026D7BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D561317013FA2D5F0026D7BF /* Foundation.framework */; };
 		D561317313FA2D5F0026D7BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D561317213FA2D5F0026D7BF /* CoreGraphics.framework */; };
@@ -70,6 +76,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D05EA9E813FD130B00B8CD89 /* UISwiftTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISwiftTextFieldDelegate.h; sourceTree = "<group>"; };
+		D05EA9E913FD130B00B8CD89 /* UISwiftTextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISwiftTextFieldDelegate.m; sourceTree = "<group>"; };
+		D05EA9EC13FD21C600B8CD89 /* SwiftButtonPurple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftButtonPurple.h; sourceTree = "<group>"; };
+		D05EA9ED13FD21C600B8CD89 /* SwiftButtonPurple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftButtonPurple.m; sourceTree = "<group>"; };
+		D05EA9EF13FD265800B8CD89 /* AboutSwiftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutSwiftViewController.h; sourceTree = "<group>"; };
+		D05EA9F013FD265800B8CD89 /* AboutSwiftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutSwiftViewController.m; sourceTree = "<group>"; };
+		D05EA9F113FD265800B8CD89 /* AboutSwiftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutSwiftViewController.xib; sourceTree = "<group>"; };
+		D05EA9F413FD270300B8CD89 /* AboutSepaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutSepaViewController.h; sourceTree = "<group>"; };
+		D05EA9F513FD270300B8CD89 /* AboutSepaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutSepaViewController.m; sourceTree = "<group>"; };
+		D05EA9F613FD270300B8CD89 /* AboutSepaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutSepaViewController.xib; sourceTree = "<group>"; };
 		D561316A13FA2D5F0026D7BF /* Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D561316E13FA2D5F0026D7BF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D561317013FA2D5F0026D7BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -231,6 +247,8 @@
 		D56131AF13FA91DB0026D7BF /* en.lproj */ = {
 			isa = PBXGroup;
 			children = (
+				D05EA9F613FD270300B8CD89 /* AboutSepaViewController.xib */,
+				D05EA9F113FD265800B8CD89 /* AboutSwiftViewController.xib */,
 				D569966013FBB473002C75DD /* IbanSearchViewController.xib */,
 				D5E9B66913FB8AB5006DCDB3 /* SwiftTabBarNavigationController.xib */,
 				D5E9B65413FB51AC006DCDB3 /* MenuViewController.xib */,
@@ -296,6 +314,8 @@
 			children = (
 				D561317D13FA2D600026D7BF /* SwiftAppDelegate.h */,
 				D561317E13FA2D600026D7BF /* SwiftAppDelegate.m */,
+				D05EA9E813FD130B00B8CD89 /* UISwiftTextFieldDelegate.h */,
+				D05EA9E913FD130B00B8CD89 /* UISwiftTextFieldDelegate.m */,
 			);
 			name = delegate;
 			sourceTree = "<group>";
@@ -315,6 +335,8 @@
 				D5E9B65C13FB5568006DCDB3 /* SwiftButtonBlue.m */,
 				D5E9B66213FB6C32006DCDB3 /* SwiftNavigationBar.h */,
 				D5E9B66313FB6C32006DCDB3 /* SwiftNavigationBar.m */,
+				D05EA9EC13FD21C600B8CD89 /* SwiftButtonPurple.h */,
+				D05EA9ED13FD21C600B8CD89 /* SwiftButtonPurple.m */,
 			);
 			name = CustomObjects;
 			sourceTree = "<group>";
@@ -330,6 +352,10 @@
 				D5E9B66D13FB8D4C006DCDB3 /* BicSearchViewController.m */,
 				D569965E13FBB473002C75DD /* IbanSearchViewController.h */,
 				D569965F13FBB473002C75DD /* IbanSearchViewController.m */,
+				D05EA9EF13FD265800B8CD89 /* AboutSwiftViewController.h */,
+				D05EA9F013FD265800B8CD89 /* AboutSwiftViewController.m */,
+				D05EA9F413FD270300B8CD89 /* AboutSepaViewController.h */,
+				D05EA9F513FD270300B8CD89 /* AboutSepaViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -437,6 +463,8 @@
 				D569967013FBBCEA002C75DD /* sepa_icon.png in Resources */,
 				D569967113FBBCEA002C75DD /* swift_icon.png in Resources */,
 				D569967213FBBCEA002C75DD /* swift_topbar_icon.png in Resources */,
+				D05EA9F313FD265800B8CD89 /* AboutSwiftViewController.xib in Resources */,
+				D05EA9F813FD270400B8CD89 /* AboutSepaViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +508,10 @@
 				D5E9B66A13FB8AB5006DCDB3 /* SwiftTabBarNavigationController.m in Sources */,
 				D5E9B66E13FB8D4C006DCDB3 /* BicSearchViewController.m in Sources */,
 				D569966113FBB473002C75DD /* IbanSearchViewController.m in Sources */,
+				D05EA9EA13FD130B00B8CD89 /* UISwiftTextFieldDelegate.m in Sources */,
+				D05EA9EE13FD21C600B8CD89 /* SwiftButtonPurple.m in Sources */,
+				D05EA9F213FD265800B8CD89 /* AboutSwiftViewController.m in Sources */,
+				D05EA9F713FD270400B8CD89 /* AboutSepaViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
