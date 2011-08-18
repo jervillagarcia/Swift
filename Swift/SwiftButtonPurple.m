@@ -1,24 +1,24 @@
 //
-//  SwiftButtonBlue.m
+//  SwiftButtonPurple.m
 //  Swift
 //
-//  Created by Errol on 8/17/11.
+//  Created by James Errol Villagarcia on 8/18/11.
 //  Copyright 2011 ApplyFinancial. All rights reserved.
 //
 
-#import "SwiftButtonBlue.h"
+#import "SwiftButtonPurple.h"
 
 
-@implementation SwiftButtonBlue
+@implementation SwiftButtonPurple
 
 -(id) initWithCoder:(NSCoder *)aDecoder {
     
     self = [super initWithCoder:aDecoder];
-
-    if (self) {
     
-        [self setBackgroundImage:[UIImage imageNamed:@"button_blue.png"] forState:UIControlStateNormal];
-        [self setBackgroundImage:[UIImage imageNamed:@"purple_button.png"] forState:UIControlStateHighlighted];
+    if (self) {
+        
+        [self setBackgroundImage:[UIImage imageNamed:@"purple_button.png"] forState:UIControlStateNormal];
+        [self setBackgroundImage:[UIImage imageNamed:@"button_blue.png"] forState:UIControlStateHighlighted];
         [self setBackgroundImage:nil forState:UIControlStateSelected];
         
         [self setTitleColor:[UIColor whiteColor]  forState:UIControlStateNormal];

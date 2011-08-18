@@ -11,6 +11,15 @@
 
 @implementation BicSearchViewController
 
+@synthesize txtBic;
+@synthesize txtInstitutionName;
+@synthesize txtNationalId;
+@synthesize txtCity;
+@synthesize txtCountry;
+@synthesize btnCountryLookup;
+@synthesize btnClear;
+@synthesize btnSearch;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -54,5 +63,22 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+#pragma mark Action(Buttons)
+-(IBAction)clearAction:(id)sender{
+    
+}
+-(IBAction)searchAction:(id)sender{
+    
+}
+-(IBAction)countryLookupAction:(id)sender{
+    
+}
+
+#pragma mark Action(Methods)
+-(void)showCountryLookup{
+    
+}
+
 
 @end
