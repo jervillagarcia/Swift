@@ -63,14 +63,32 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark Actions (Buttons)
 -(IBAction)clickBtnCheckBic:(id)sender {
+    [self showTabWithIndex:0];
+}
+
+-(IBAction)clickBtnCheckIban:(id)sender {
+    [self showTabWithIndex:1];
+}
+
+-(IBAction)clickBtnAboutSwift:(id)sender {
+    [self showTabWithIndex:2];
+}
+
+-(IBAction)clickBtnAboutSepa:(id)sender {
+    [self showTabWithIndex:3];
+}
+
+#pragma mark Actions (Methods)
+-(void)showTabWithIndex:(int)tabIndex {
     
     SwiftTabBarNavigationController *navTab = [[SwiftTabBarNavigationController alloc] initWithNibName:@"SwiftTabBarNavigationController" bundle:nil];
     [self.navigationController pushViewController:navTab animated:NO];
-    [navTab selectTab:1];
+    [navTab selectTab:tabIndex];
     [navTab release];
-
-    [self.navigationController setNavigationBarHidden:YES];
+    
+    [self.navigationController setNavigationBarHidden:YES];  
 }
 
 @end

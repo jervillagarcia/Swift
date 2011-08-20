@@ -24,5 +24,10 @@
 @property(nonatomic, retain) UIButton *btnInfo;
 
 -(IBAction)clickBtnCheckBic:(id)sender;
+-(IBAction)clickBtnCheckIban:(id)sender;
+-(IBAction)clickBtnAboutSwift:(id)sender;
+-(IBAction)clickBtnAboutSepa:(id)sender;
+
+-(void)showTabWithIndex:(int)tabIndex;
 
 @end

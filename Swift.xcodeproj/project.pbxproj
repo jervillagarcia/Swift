@@ -41,6 +41,8 @@
 		D56131D413FA97490026D7BF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D56131C313FA97480026D7BF /* Default.png */; };
 		D56131D513FA97490026D7BF /* swift_menubutton.png in Resources */ = {isa = PBXBuildFile; fileRef = D56131C413FA97480026D7BF /* swift_menubutton.png */; };
 		D56131D613FA97490026D7BF /* top_white.png in Resources */ = {isa = PBXBuildFile; fileRef = D56131C513FA97480026D7BF /* top_white.png */; };
+		D5665EAB13FF6FE300F249D1 /* backbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = D5665EAA13FF6FE300F249D1 /* backbutton.png */; };
+		D5665EAE13FF6FEC00F249D1 /* purple_button_big.png in Resources */ = {isa = PBXBuildFile; fileRef = D5665EAD13FF6FEC00F249D1 /* purple_button_big.png */; };
 		D569965813FBB163002C75DD /* 21-check_bic_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D569965613FBB163002C75DD /* 21-check_bic_logo.png */; };
 		D569965913FBB163002C75DD /* 21-check_iban_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D569965713FBB163002C75DD /* 21-check_iban_logo.png */; };
 		D569965C13FBB171002C75DD /* bg-1.png in Resources */ = {isa = PBXBuildFile; fileRef = D569965A13FBB171002C75DD /* bg-1.png */; };
@@ -118,6 +120,8 @@
 		D56131C313FA97480026D7BF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = images/Default.png; sourceTree = "<group>"; };
 		D56131C413FA97480026D7BF /* swift_menubutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = swift_menubutton.png; path = images/swift_menubutton.png; sourceTree = "<group>"; };
 		D56131C513FA97480026D7BF /* top_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = top_white.png; path = images/top_white.png; sourceTree = "<group>"; };
+		D5665EAA13FF6FE300F249D1 /* backbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbutton.png; sourceTree = "<group>"; };
+		D5665EAD13FF6FEC00F249D1 /* purple_button_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purple_button_big.png; sourceTree = "<group>"; };
 		D569965613FBB163002C75DD /* 21-check_bic_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "21-check_bic_logo.png"; path = "images/21/21-check_bic_logo.png"; sourceTree = "<group>"; };
 		D569965713FBB163002C75DD /* 21-check_iban_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "21-check_iban_logo.png"; path = "images/21/21-check_iban_logo.png"; sourceTree = "<group>"; };
 		D569965A13FBB171002C75DD /* bg-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-1.png"; path = "images/background/bg-1.png"; sourceTree = "<group>"; };
@@ -260,6 +264,8 @@
 		D56131B113FA92610026D7BF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D5665EAD13FF6FEC00F249D1 /* purple_button_big.png */,
+				D5665EAA13FF6FE300F249D1 /* backbutton.png */,
 				D569966913FBBCE9002C75DD /* check_bic_icon.png */,
 				D569966A13FBBCE9002C75DD /* checkiban_icon.png */,
 				D569966B13FBBCEA002C75DD /* sepa_icon.png */,
@@ -465,6 +471,8 @@
 				D569967213FBBCEA002C75DD /* swift_topbar_icon.png in Resources */,
 				D05EA9F313FD265800B8CD89 /* AboutSwiftViewController.xib in Resources */,
 				D05EA9F813FD270400B8CD89 /* AboutSepaViewController.xib in Resources */,
+				D5665EAB13FF6FE300F249D1 /* backbutton.png in Resources */,
+				D5665EAE13FF6FEC00F249D1 /* purple_button_big.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

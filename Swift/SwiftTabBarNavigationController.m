@@ -57,7 +57,14 @@
     [super viewDidLoad];
     unichar backArrowCode = 0x25C0;
     
-    backItem1 = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithCharacters:&backArrowCode length:1] style:UIBarButtonItemStylePlain target:self action:@selector(backAction:)];
+    UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage  *buttonImage1 = [UIImage imageNamed:@"backbutton.png"];
+    [button1 setImage:buttonImage1 forState:UIControlStateNormal];
+    [button1 addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
+    [button1 setFrame:CGRectMake(0, 0, buttonImage1.size.width, buttonImage1.size.height)];
+    backItem1 = [[UIBarButtonItem alloc] initWithCustomView:button1];
+    
+//    backItem1 = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithCharacters:&backArrowCode length:1] style:UIBarButtonItemStylePlain target:self action:@selector(backAction:)];
     backItem2 = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithCharacters:&backArrowCode length:1] style:UIBarButtonItemStylePlain target:self action:@selector(backAction:)];
     backItem3 = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithCharacters:&backArrowCode length:1] style:UIBarButtonItemStylePlain target:self action:@selector(backAction:)];
     backItem4 = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithCharacters:&backArrowCode length:1] style:UIBarButtonItemStylePlain target:self action:@selector(backAction:)];
@@ -115,8 +122,8 @@
 
 #pragma mark Actions (Method)
 -(void)selectTab:(NSUInteger)tabIndex {
-    NSArray *viewControllers = self.viewControllers;
     
-    [[viewControllers objectAtIndex:tabIndex] setSelected:YES];
+    
+    [self setSelectedIndex:tabIndex];
 }
 @end

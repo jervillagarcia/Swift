@@ -18,7 +18,7 @@
     if (self) {
     
         [self setBackgroundImage:[UIImage imageNamed:@"button_blue.png"] forState:UIControlStateNormal];
-        [self setBackgroundImage:[UIImage imageNamed:@"purple_button.png"] forState:UIControlStateHighlighted];
+        [self setBackgroundImage:[UIImage imageNamed:@"purple_button_big.png"] forState:UIControlStateHighlighted];
         [self setBackgroundImage:nil forState:UIControlStateSelected];
         
         [self setTitleColor:[UIColor whiteColor]  forState:UIControlStateNormal];
