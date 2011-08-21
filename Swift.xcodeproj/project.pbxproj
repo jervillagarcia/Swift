@@ -57,6 +57,7 @@
 		D569967013FBBCEA002C75DD /* sepa_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D569966B13FBBCEA002C75DD /* sepa_icon.png */; };
 		D569967113FBBCEA002C75DD /* swift_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D569966C13FBBCEA002C75DD /* swift_icon.png */; };
 		D569967213FBBCEA002C75DD /* swift_topbar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D569966D13FBBCEA002C75DD /* swift_topbar_icon.png */; };
+		D56AD45C1400ABDA009BDE17 /* countries.xml in Resources */ = {isa = PBXBuildFile; fileRef = D56AD45B1400ABDA009BDE17 /* countries.xml */; };
 		D5E9B65513FB51AC006DCDB3 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E9B65413FB51AC006DCDB3 /* MenuViewController.xib */; };
 		D5E9B65D13FB5568006DCDB3 /* SwiftButtonBlue.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E9B65C13FB5568006DCDB3 /* SwiftButtonBlue.m */; };
 		D5E9B66113FB594A006DCDB3 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E9B66013FB594A006DCDB3 /* MenuViewController.m */; };
@@ -137,6 +138,8 @@
 		D569966B13FBBCEA002C75DD /* sepa_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sepa_icon.png; path = images/icon/sepa_icon.png; sourceTree = "<group>"; };
 		D569966C13FBBCEA002C75DD /* swift_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = swift_icon.png; path = images/icon/swift_icon.png; sourceTree = "<group>"; };
 		D569966D13FBBCEA002C75DD /* swift_topbar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = swift_topbar_icon.png; path = images/icon/swift_topbar_icon.png; sourceTree = "<group>"; };
+		D56AD45B1400ABDA009BDE17 /* countries.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = countries.xml; path = Resources/DataModel/countries.xml; sourceTree = "<group>"; };
+		D56AD45D1400B95E009BDE17 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		D5E9B65413FB51AC006DCDB3 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		D5E9B65B13FB5568006DCDB3 /* SwiftButtonBlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftButtonBlue.h; sourceTree = "<group>"; };
 		D5E9B65C13FB5568006DCDB3 /* SwiftButtonBlue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftButtonBlue.m; sourceTree = "<group>"; };
@@ -179,6 +182,7 @@
 		D561315F13FA2D5F0026D7BF = {
 			isa = PBXGroup;
 			children = (
+				D56AD45D1400B95E009BDE17 /* CFNetwork.framework */,
 				D561317413FA2D5F0026D7BF /* Swift */,
 				D561319413FA2D600026D7BF /* SwiftTests */,
 				D561316D13FA2D5F0026D7BF /* Frameworks */,
@@ -310,6 +314,7 @@
 		D56131B313FA929A0026D7BF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D56AD4591400ABC1009BDE17 /* DataModel */,
 				D561318013FA2D600026D7BF /* MainWindow.xib */,
 			);
 			name = Resources;
@@ -324,6 +329,14 @@
 				D05EA9E913FD130B00B8CD89 /* UISwiftTextFieldDelegate.m */,
 			);
 			name = delegate;
+			sourceTree = "<group>";
+		};
+		D56AD4591400ABC1009BDE17 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				D56AD45B1400ABDA009BDE17 /* countries.xml */,
+			);
+			name = DataModel;
 			sourceTree = "<group>";
 		};
 		D5E9B65913FB54B0006DCDB3 /* Utilities */ = {
@@ -473,6 +486,7 @@
 				D05EA9F813FD270400B8CD89 /* AboutSepaViewController.xib in Resources */,
 				D5665EAB13FF6FE300F249D1 /* backbutton.png in Resources */,
 				D5665EAE13FF6FEC00F249D1 /* purple_button_big.png in Resources */,
+				D56AD45C1400ABDA009BDE17 /* countries.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

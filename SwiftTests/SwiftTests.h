@@ -3,7 +3,7 @@
 //  SwiftTests
 //
 //  Created by Errol on 8/16/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 ApplyFinancial. All rights reserved.
 //
 
 #import <SenTestingKit/SenTestingKit.h>

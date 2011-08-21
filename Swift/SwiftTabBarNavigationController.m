@@ -55,19 +55,33 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    unichar backArrowCode = 0x25C0;
+
+    UIImage  *buttonImage = [UIImage imageNamed:@"backbutton.png"];
     
     UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage  *buttonImage1 = [UIImage imageNamed:@"backbutton.png"];
-    [button1 setImage:buttonImage1 forState:UIControlStateNormal];
+    [button1 setImage:buttonImage forState:UIControlStateNormal];
     [button1 addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
-    [button1 setFrame:CGRectMake(0, 0, buttonImage1.size.width, buttonImage1.size.height)];
+    [button1 setFrame:CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height)];
+
+    UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button2 setImage:buttonImage forState:UIControlStateNormal];
+    [button2 addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
+    [button2 setFrame:CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height)];
+
+    UIButton *button3 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button3 setImage:buttonImage forState:UIControlStateNormal];
+    [button3 addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
+    [button3 setFrame:CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height)];
+
+    UIButton *button4 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button4 setImage:buttonImage forState:UIControlStateNormal];
+    [button4 addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
+    [button4 setFrame:CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height)];
+
     backItem1 = [[UIBarButtonItem alloc] initWithCustomView:button1];
-    
-//    backItem1 = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithCharacters:&backArrowCode length:1] style:UIBarButtonItemStylePlain target:self action:@selector(backAction:)];
-    backItem2 = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithCharacters:&backArrowCode length:1] style:UIBarButtonItemStylePlain target:self action:@selector(backAction:)];
-    backItem3 = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithCharacters:&backArrowCode length:1] style:UIBarButtonItemStylePlain target:self action:@selector(backAction:)];
-    backItem4 = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithCharacters:&backArrowCode length:1] style:UIBarButtonItemStylePlain target:self action:@selector(backAction:)];
+    backItem2 = [[UIBarButtonItem alloc] initWithCustomView:button2];
+    backItem3 = [[UIBarButtonItem alloc] initWithCustomView:button3];
+    backItem4 = [[UIBarButtonItem alloc] initWithCustomView:button4];
     
     // BIC SEARCH
     self.bicSearch = [[BicSearchViewController alloc] initWithNibName:@"BicSearchViewController" bundle:nil];

@@ -11,6 +11,8 @@
 
 @implementation AboutSwiftViewController
 
+@synthesize webView, activityInd;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -40,7 +42,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    NSString *urlAddress = @"http://www.swift.com/about_swift/index.page?";
+    
+    //Create a URL object.
+    NSURL *url = [NSURL URLWithString:urlAddress];
+    
+    //URL Requst Object
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    
+    //Load the request in the UIWebView.
+    [webView loadRequest:requestObj];
+    
+    
 }
 
 - (void)viewDidUnload
@@ -56,4 +70,14 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    [activityInd setHidden:NO];
+    [activityInd startAnimating];
+    
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [activityInd stopAnimating];
+
+}
 @end

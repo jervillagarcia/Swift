@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 
 
-@interface AboutSwiftViewController : UIViewController {
-    
+@interface AboutSwiftViewController : UIViewController<UIWebViewDelegate> {
+    IBOutlet UIWebView *webView;
+    IBOutlet UIActivityIndicatorView *activityInd;
 }
+
+@property(nonatomic,retain) UIWebView *webView;
+@property(nonatomic, retain) UIActivityIndicatorView *activityInd;
 
 @end
