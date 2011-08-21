@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ER00001</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid IBAN Length</string>
+		<key>ErrorDesc</key>
+		<string></string>
+	</dict>
+	<key>ER00002</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid IBAN Check Digits</string>
+		<key>ErrorDesc</key>
+		<string>The check digit included in the IBAN input does not match the check digit that was computed. This digits refers to the one beside the country code.</string>
+	</dict>
+	<key>ER00003</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid Account Basic</string>
+		<key>ErrorDesc</key>
+		<string></string>
+	</dict>
+	<key>ER00004</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid Account Identifier</string>
+		<key>ErrorDesc</key>
+		<string></string>
+	</dict>
+	<key>ER00005</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid Account Number</string>
+		<key>ErrorDesc</key>
+		<string></string>
+	</dict>
+	<key>ER00006</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid Account Prefix</string>
+		<key>ErrorDesc</key>
+		<string></string>
+	</dict>
+	<key>ER00007</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid Account Type</string>
+		<key>ErrorDesc</key>
+		<string></string>
+	</dict>
+	<key>ER00008</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid Bank Code</string>
+		<key>ErrorDesc</key>
+		<string></string>
+	</dict>
+	<key>ER00009</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid Bank Identifier</string>
+		<key>ErrorDesc</key>
+		<string></string>
+	</dict>
+	<key>ER00010</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid Bank Sort Code</string>
+		<key>ErrorDesc</key>
+		<string></string>
+	</dict>
+	<key>ER00011</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid Branch Code</string>
+		<key>ErrorDesc</key>
+		<string></string>
+	</dict>
+	<key>ER00012</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid Branch Identifier</string>
+		<key>ErrorDesc</key>
+		<string></string>
+	</dict>
+	<key>ER00013</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid Characters Of The Bank</string>
+		<key>ErrorDesc</key>
+		<string>Applies to &quot;Bulgaria&quot; wherein there&apos;s an input of &quot;Characters of the Bank&quot; in computing the IBAN.</string>
+	</dict>
+	<key>ER00014</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid Check Digits</string>
+		<key>ErrorDesc</key>
+		<string>This is the additional Check digit that needs to be computed aside from the IBAN Check digit.</string>
+	</dict>
+	<key>ER00015</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid Check Digits 1</string>
+		<key>ErrorDesc</key>
+		<string>This is the additional Check digit that needs to be computed aside from the IBAN check digit. We put &quot;1&quot; because of multiple check digits</string>
+	</dict>
+	<key>ER00016</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid Check Digits 2</string>
+		<key>ErrorDesc</key>
+		<string>This is the additional Check digit that needs to be computed aside from the IBAN Check digit. We put &quot;2&quot; because of multiple check digits.</string>
+	</dict>
+	<key>ER00017</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid Country Code</string>
+		<key>ErrorDesc</key>
+		<string></string>
+	</dict>
+	<key>ER00018</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid Currency Code</string>
+		<key>ErrorDesc</key>
+		<string></string>
+	</dict>
+	<key>ER00019</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid Future Needs</string>
+		<key>ErrorDesc</key>
+		<string>Applies to &quot;Mauritius&quot; wherein there&apos;s an input of &quot;Future Needs&quot; in computing the IBAN.</string>
+	</dict>
+	<key>ER00020</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid Identification Number</string>
+		<key>ErrorDesc</key>
+		<string></string>
+	</dict>
+	<key>ER00021</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid Leading Zero</string>
+		<key>ErrorDesc</key>
+		<string></string>
+	</dict>
+	<key>ER00022</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid Reserved Fields</string>
+		<key>ErrorDesc</key>
+		<string>Applies to &quot;Turkey&quot; wherein there&apos;s an input of &quot;Reserved Fields&quot; in computing the IBAN.</string>
+	</dict>
+	<key>ER00023</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Invalid CIN Check Digit</string>
+		<key>ErrorDesc</key>
+		<string>Applies to &quot;Italy&quot; to compute the IBAN.</string>
+	</dict>
+	<key>ER00026</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>No bank records found</string>
+		<key>ErrorDesc</key>
+		<string></string>
+	</dict>
+	<key>ER00027</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Payment code does not exist</string>
+		<key>ErrorDesc</key>
+		<string></string>
+	</dict>
+	<key>ER00028</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>Bank and BIC do not match</string>
+		<key>ErrorDesc</key>
+		<string></string>
+	</dict>
+	<key>ER00029</key>
+	<dict>
+		<key>ErrorName</key>
+		<string>No Records found</string>
+		<key>ErrorDesc</key>
+		<string></string>
+	</dict>
+</dict>
+</plist>
