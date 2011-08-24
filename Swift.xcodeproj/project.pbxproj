@@ -13,6 +13,8 @@
 		D05EA9F313FD265800B8CD89 /* AboutSwiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05EA9F113FD265800B8CD89 /* AboutSwiftViewController.xib */; };
 		D05EA9F713FD270400B8CD89 /* AboutSepaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D05EA9F513FD270300B8CD89 /* AboutSepaViewController.m */; };
 		D05EA9F813FD270400B8CD89 /* AboutSepaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05EA9F613FD270300B8CD89 /* AboutSepaViewController.xib */; };
+		D5311D4C1404D2EA00ADB48A /* iphone3.png in Resources */ = {isa = PBXBuildFile; fileRef = D5311D4B1404D2EA00ADB48A /* iphone3.png */; };
+		D5311D4E1404D2FE00ADB48A /* iphone4.png in Resources */ = {isa = PBXBuildFile; fileRef = D5311D4D1404D2FE00ADB48A /* iphone4.png */; };
 		D561316F13FA2D5F0026D7BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D561316E13FA2D5F0026D7BF /* UIKit.framework */; };
 		D561317113FA2D5F0026D7BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D561317013FA2D5F0026D7BF /* Foundation.framework */; };
 		D561317313FA2D5F0026D7BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D561317213FA2D5F0026D7BF /* CoreGraphics.framework */; };
@@ -91,6 +93,8 @@
 		D05EA9F413FD270300B8CD89 /* AboutSepaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutSepaViewController.h; sourceTree = "<group>"; };
 		D05EA9F513FD270300B8CD89 /* AboutSepaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutSepaViewController.m; sourceTree = "<group>"; };
 		D05EA9F613FD270300B8CD89 /* AboutSepaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutSepaViewController.xib; sourceTree = "<group>"; };
+		D5311D4B1404D2EA00ADB48A /* iphone3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iphone3.png; path = ../iphone3.png; sourceTree = "<group>"; };
+		D5311D4D1404D2FE00ADB48A /* iphone4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iphone4.png; path = ../iphone4.png; sourceTree = "<group>"; };
 		D561316A13FA2D5F0026D7BF /* Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D561316E13FA2D5F0026D7BF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D561317013FA2D5F0026D7BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -273,6 +277,8 @@
 		D56131B113FA92610026D7BF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D5311D4D1404D2FE00ADB48A /* iphone4.png */,
+				D5311D4B1404D2EA00ADB48A /* iphone3.png */,
 				D5665EAD13FF6FEC00F249D1 /* purple_button_big.png */,
 				D5665EAA13FF6FE300F249D1 /* backbutton.png */,
 				D569966913FBBCE9002C75DD /* check_bic_icon.png */,
@@ -496,6 +502,8 @@
 				D5665EAE13FF6FEC00F249D1 /* purple_button_big.png in Resources */,
 				D56AD45C1400ABDA009BDE17 /* countries.xml in Resources */,
 				D5DA1CD5140161B700D4095D /* ErrorList.plist in Resources */,
+				D5311D4C1404D2EA00ADB48A /* iphone3.png in Resources */,
+				D5311D4E1404D2FE00ADB48A /* iphone4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
