@@ -15,6 +15,7 @@
 		D05EA9F813FD270400B8CD89 /* AboutSepaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05EA9F613FD270300B8CD89 /* AboutSepaViewController.xib */; };
 		D5311D4C1404D2EA00ADB48A /* iphone3.png in Resources */ = {isa = PBXBuildFile; fileRef = D5311D4B1404D2EA00ADB48A /* iphone3.png */; };
 		D5311D4E1404D2FE00ADB48A /* iphone4.png in Resources */ = {isa = PBXBuildFile; fileRef = D5311D4D1404D2FE00ADB48A /* iphone4.png */; };
+		D0C6AF1A1405F3F10082DB00 /* WSFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C6AF191405F3F10082DB00 /* WSFactory.m */; };
 		D561316F13FA2D5F0026D7BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D561316E13FA2D5F0026D7BF /* UIKit.framework */; };
 		D561317113FA2D5F0026D7BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D561317013FA2D5F0026D7BF /* Foundation.framework */; };
 		D561317313FA2D5F0026D7BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D561317213FA2D5F0026D7BF /* CoreGraphics.framework */; };
@@ -95,6 +96,8 @@
 		D05EA9F613FD270300B8CD89 /* AboutSepaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutSepaViewController.xib; sourceTree = "<group>"; };
 		D5311D4B1404D2EA00ADB48A /* iphone3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iphone3.png; path = ../iphone3.png; sourceTree = "<group>"; };
 		D5311D4D1404D2FE00ADB48A /* iphone4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iphone4.png; path = ../iphone4.png; sourceTree = "<group>"; };
+		D0C6AF181405F3F10082DB00 /* WSFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFactory.h; sourceTree = "<group>"; };
+		D0C6AF191405F3F10082DB00 /* WSFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFactory.m; sourceTree = "<group>"; };
 		D561316A13FA2D5F0026D7BF /* Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D561316E13FA2D5F0026D7BF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D561317013FA2D5F0026D7BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -357,6 +360,8 @@
 				D5E9B65A13FB54BD006DCDB3 /* CustomObjects */,
 				D5DA1CCF140154A500D4095D /* SwiftConstant.h */,
 				D5DA1CD0140154A500D4095D /* SwiftConstant.m */,
+				D0C6AF181405F3F10082DB00 /* WSFactory.h */,
+				D0C6AF191405F3F10082DB00 /* WSFactory.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -552,6 +557,7 @@
 				D05EA9F213FD265800B8CD89 /* AboutSwiftViewController.m in Sources */,
 				D05EA9F713FD270400B8CD89 /* AboutSepaViewController.m in Sources */,
 				D5DA1CD1140154A500D4095D /* SwiftConstant.m in Sources */,
+				D0C6AF1A1405F3F10082DB00 /* WSFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
