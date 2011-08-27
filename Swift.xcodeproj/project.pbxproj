@@ -69,8 +69,6 @@
 		D5DCDA0D1408A86400786D6A /* Sepa.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DCDA0C1408A86400786D6A /* Sepa.m */; };
 		D5DCDA151408A9FC00786D6A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DCDA141408A9FC00786D6A /* CoreData.framework */; };
 		D5DCDA1B1408ABCA00786D6A /* Routing.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DCDA1A1408ABCA00786D6A /* Routing.m */; };
-		D5DCDA1D1408CB2F00786D6A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DCDA1C1408CB2E00786D6A /* SystemConfiguration.framework */; };
-		D5DCDA201408CCE000786D6A /* Ident.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DCDA1F1408CCDF00786D6A /* Ident.m */; };
 		D5E9B65513FB51AC006DCDB3 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E9B65413FB51AC006DCDB3 /* MenuViewController.xib */; };
 		D5E9B65D13FB5568006DCDB3 /* SwiftButtonBlue.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E9B65C13FB5568006DCDB3 /* SwiftButtonBlue.m */; };
 		D5E9B66113FB594A006DCDB3 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E9B66013FB594A006DCDB3 /* MenuViewController.m */; };
@@ -170,9 +168,6 @@
 		D5DCDA141408A9FC00786D6A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D5DCDA191408ABCA00786D6A /* Routing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Routing.h; sourceTree = "<group>"; };
 		D5DCDA1A1408ABCA00786D6A /* Routing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Routing.m; sourceTree = "<group>"; };
-		D5DCDA1C1408CB2E00786D6A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		D5DCDA1E1408CCDF00786D6A /* Ident.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ident.h; sourceTree = "<group>"; };
-		D5DCDA1F1408CCDF00786D6A /* Ident.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ident.m; sourceTree = "<group>"; };
 		D5E9B65413FB51AC006DCDB3 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		D5E9B65B13FB5568006DCDB3 /* SwiftButtonBlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftButtonBlue.h; sourceTree = "<group>"; };
 		D5E9B65C13FB5568006DCDB3 /* SwiftButtonBlue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftButtonBlue.m; sourceTree = "<group>"; };
@@ -193,7 +188,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5DCDA1D1408CB2F00786D6A /* SystemConfiguration.framework in Frameworks */,
 				D5DCDA151408A9FC00786D6A /* CoreData.framework in Frameworks */,
 				D561316F13FA2D5F0026D7BF /* UIKit.framework in Frameworks */,
 				D561317113FA2D5F0026D7BF /* Foundation.framework in Frameworks */,
@@ -217,6 +211,7 @@
 		D561315F13FA2D5F0026D7BF = {
 			isa = PBXGroup;
 			children = (
+				D5DCDA141408A9FC00786D6A /* CoreData.framework */,
 				D561317413FA2D5F0026D7BF /* Swift */,
 				D561319413FA2D600026D7BF /* SwiftTests */,
 				D561316D13FA2D5F0026D7BF /* Frameworks */,
@@ -236,8 +231,6 @@
 		D561316D13FA2D5F0026D7BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D5DCDA1C1408CB2E00786D6A /* SystemConfiguration.framework */,
-				D5DCDA141408A9FC00786D6A /* CoreData.framework */,
 				D56AD45D1400B95E009BDE17 /* CFNetwork.framework */,
 				D561316E13FA2D5F0026D7BF /* UIKit.framework */,
 				D561317013FA2D5F0026D7BF /* Foundation.framework */,
@@ -384,8 +377,6 @@
 		D5DCDA041408A79500786D6A /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
-				D5DCDA1E1408CCDF00786D6A /* Ident.h */,
-				D5DCDA1F1408CCDF00786D6A /* Ident.m */,
 				D5DCDA191408ABCA00786D6A /* Routing.h */,
 				D5DCDA1A1408ABCA00786D6A /* Routing.m */,
 				D5DCDA0B1408A86400786D6A /* Sepa.h */,
@@ -607,7 +598,6 @@
 				D5DCDA0A1408A84A00786D6A /* LocHeadBank.m in Sources */,
 				D5DCDA0D1408A86400786D6A /* Sepa.m in Sources */,
 				D5DCDA1B1408ABCA00786D6A /* Routing.m in Sources */,
-				D5DCDA201408CCE000786D6A /* Ident.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
