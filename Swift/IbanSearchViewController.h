@@ -13,4 +13,6 @@
     
 }
 
+- (IBAction)clickSearch:(id)sender;
+
 @end

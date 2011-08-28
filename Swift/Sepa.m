@@ -10,6 +10,5 @@
 
 
 @implementation Sepa
-@dynamic compliant;
 
 @end

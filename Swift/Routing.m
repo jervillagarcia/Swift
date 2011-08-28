@@ -12,13 +12,12 @@
 
 
 @implementation Routing
-@dynamic name;
-@dynamic address;
-@dynamic city;
-@dynamic location;
-@dynamic countryKv;
-@dynamic bank;
-@dynamic ident;
+@synthesize name;
+@synthesize address;
+@synthesize city;
+@synthesize location;
+@synthesize countryKv;
+@synthesize ident;
 
 
 

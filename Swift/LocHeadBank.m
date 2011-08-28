@@ -10,10 +10,12 @@
 
 
 @implementation LocHeadBank
-@dynamic city;
-@dynamic address;
-@dynamic countryKv;
-@dynamic location;
-@dynamic name;
+
+@synthesize city;
+@synthesize address;
+@synthesize countryKv;
+@synthesize location;
+@synthesize name;
+@synthesize routing;
 
 @end

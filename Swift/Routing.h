@@ -7,19 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+#import "Ident.h"
 
-@class Bank, Ident;
-
-@interface Routing : NSManagedObject {
-@private
+@interface Routing : NSObject {
+    NSString * name;
+    NSString * address;
+    NSString * city;
+    NSString * location;
+    NSString * countryKv;
+    Ident * ident;
 }
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * address;
 @property (nonatomic, retain) NSString * city;
 @property (nonatomic, retain) NSString * location;
 @property (nonatomic, retain) NSString * countryKv;
-@property (nonatomic, retain) Bank * bank;
 @property (nonatomic, retain) Ident * ident;
 
 @end

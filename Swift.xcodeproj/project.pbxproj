@@ -14,6 +14,7 @@
 		D05EA9F713FD270400B8CD89 /* AboutSepaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D05EA9F513FD270300B8CD89 /* AboutSepaViewController.m */; };
 		D05EA9F813FD270400B8CD89 /* AboutSepaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05EA9F613FD270300B8CD89 /* AboutSepaViewController.xib */; };
 		D0C6AF1A1405F3F10082DB00 /* WSFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C6AF191405F3F10082DB00 /* WSFactory.m */; };
+		D531090914094C4C00D5BEA2 /* Ident.m in Sources */ = {isa = PBXBuildFile; fileRef = D531090814094C4C00D5BEA2 /* Ident.m */; };
 		D5311D4C1404D2EA00ADB48A /* iphone3.png in Resources */ = {isa = PBXBuildFile; fileRef = D5311D4B1404D2EA00ADB48A /* iphone3.png */; };
 		D5311D4E1404D2FE00ADB48A /* iphone4.png in Resources */ = {isa = PBXBuildFile; fileRef = D5311D4D1404D2FE00ADB48A /* iphone4.png */; };
 		D561316F13FA2D5F0026D7BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D561316E13FA2D5F0026D7BF /* UIKit.framework */; };
@@ -102,6 +103,8 @@
 		D05EA9F613FD270300B8CD89 /* AboutSepaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutSepaViewController.xib; sourceTree = "<group>"; };
 		D0C6AF181405F3F10082DB00 /* WSFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFactory.h; sourceTree = "<group>"; };
 		D0C6AF191405F3F10082DB00 /* WSFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFactory.m; sourceTree = "<group>"; };
+		D531090714094C4C00D5BEA2 /* Ident.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ident.h; sourceTree = "<group>"; };
+		D531090814094C4C00D5BEA2 /* Ident.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ident.m; sourceTree = "<group>"; };
 		D5311D4B1404D2EA00ADB48A /* iphone3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iphone3.png; path = ../iphone3.png; sourceTree = "<group>"; };
 		D5311D4D1404D2FE00ADB48A /* iphone4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iphone4.png; path = ../iphone4.png; sourceTree = "<group>"; };
 		D561316A13FA2D5F0026D7BF /* Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -377,6 +380,8 @@
 		D5DCDA041408A79500786D6A /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
+				D531090714094C4C00D5BEA2 /* Ident.h */,
+				D531090814094C4C00D5BEA2 /* Ident.m */,
 				D5DCDA191408ABCA00786D6A /* Routing.h */,
 				D5DCDA1A1408ABCA00786D6A /* Routing.m */,
 				D5DCDA0B1408A86400786D6A /* Sepa.h */,
@@ -598,6 +603,7 @@
 				D5DCDA0A1408A84A00786D6A /* LocHeadBank.m in Sources */,
 				D5DCDA0D1408A86400786D6A /* Sepa.m in Sources */,
 				D5DCDA1B1408ABCA00786D6A /* Routing.m in Sources */,
+				D531090914094C4C00D5BEA2 /* Ident.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

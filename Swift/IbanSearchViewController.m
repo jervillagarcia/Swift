@@ -7,7 +7,7 @@
 //
 
 #import "IbanSearchViewController.h"
-
+#import "WSFactory.h"
 
 @implementation IbanSearchViewController
 
@@ -54,6 +54,11 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (IBAction)clickSearch:(id)sender {
+    WSFactory *ws = [[WSFactory alloc] init];
+    [ws getBankDetailsWithIban:@"" bic:@"" currency:@""];
 }
 
 @end

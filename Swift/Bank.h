@@ -7,11 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+#import "Ident.h"
+#import "Sepa.h"
+#import "LocHeadBank.h"
 
 
-@interface Bank : NSManagedObject {
-@private
+@interface Bank : NSObject {
+    NSString * location;
+    NSString * iban;
+    NSString * countryKv;
+    NSString * name;
+    NSString * city;
+    NSString * address;
+    LocHeadBank * locHeadBank;
+    Ident * ident;
+    Sepa * sepa;
 }
 @property (nonatomic, retain) NSString * location;
 @property (nonatomic, retain) NSString * iban;
@@ -19,9 +29,8 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * city;
 @property (nonatomic, retain) NSString * address;
-@property (nonatomic, retain) NSManagedObject * locHeadBank;
-@property (nonatomic, retain) NSSet* routings;
-@property (nonatomic, retain) NSManagedObject * bankIdent;
-@property (nonatomic, retain) NSManagedObject * sepa;
+@property (nonatomic, retain) LocHeadBank * locHeadBank;
+@property (nonatomic, retain) Ident * ident;
+@property (nonatomic, retain) Sepa * sepa;
 
 @end

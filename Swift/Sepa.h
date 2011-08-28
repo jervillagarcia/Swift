@@ -7,12 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
 
 
-@interface Sepa : NSManagedObject {
-@private
+@interface Sepa : NSObject {
+    BOOL compliant;
 }
-@property (nonatomic, retain) NSNumber * compliant;
 
 @end

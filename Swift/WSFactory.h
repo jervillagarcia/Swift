@@ -13,4 +13,10 @@
     
 }
 
+-(void)getBankDetailsWithIban:(NSString*)iban bic:(NSString*)bic currency:(NSString*)currency;
+
+-(NSString*)getStartHeader;
+-(NSString*)getEndFooter;
+-(NSString*)getHeaderAuth;
+
 @end
