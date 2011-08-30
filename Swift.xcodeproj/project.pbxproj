@@ -14,6 +14,7 @@
 		D05EA9F713FD270400B8CD89 /* AboutSepaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D05EA9F513FD270300B8CD89 /* AboutSepaViewController.m */; };
 		D05EA9F813FD270400B8CD89 /* AboutSepaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05EA9F613FD270300B8CD89 /* AboutSepaViewController.xib */; };
 		D0C6AF1A1405F3F10082DB00 /* WSFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C6AF191405F3F10082DB00 /* WSFactory.m */; };
+		D531090914094C4C00D5BEA2 /* Ident.m in Sources */ = {isa = PBXBuildFile; fileRef = D531090814094C4C00D5BEA2 /* Ident.m */; };
 		D5311D4C1404D2EA00ADB48A /* iphone3.png in Resources */ = {isa = PBXBuildFile; fileRef = D5311D4B1404D2EA00ADB48A /* iphone3.png */; };
 		D5311D4E1404D2FE00ADB48A /* iphone4.png in Resources */ = {isa = PBXBuildFile; fileRef = D5311D4D1404D2FE00ADB48A /* iphone4.png */; };
 		D561316F13FA2D5F0026D7BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D561316E13FA2D5F0026D7BF /* UIKit.framework */; };
@@ -63,6 +64,12 @@
 		D56AD45C1400ABDA009BDE17 /* countries.xml in Resources */ = {isa = PBXBuildFile; fileRef = D56AD45B1400ABDA009BDE17 /* countries.xml */; };
 		D5DA1CD1140154A500D4095D /* SwiftConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DA1CD0140154A500D4095D /* SwiftConstant.m */; };
 		D5DA1CD5140161B700D4095D /* ErrorList.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5DA1CD4140161B700D4095D /* ErrorList.plist */; };
+		D5DCD9FF14089CE700786D6A /* Vortex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D5DCD9FD14089CE700786D6A /* Vortex.xcdatamodeld */; };
+		D5DCDA071408A7CC00786D6A /* Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DCDA061408A7CC00786D6A /* Bank.m */; };
+		D5DCDA0A1408A84A00786D6A /* LocHeadBank.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DCDA091408A84A00786D6A /* LocHeadBank.m */; };
+		D5DCDA0D1408A86400786D6A /* Sepa.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DCDA0C1408A86400786D6A /* Sepa.m */; };
+		D5DCDA151408A9FC00786D6A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DCDA141408A9FC00786D6A /* CoreData.framework */; };
+		D5DCDA1B1408ABCA00786D6A /* Routing.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DCDA1A1408ABCA00786D6A /* Routing.m */; };
 		D5E9B65513FB51AC006DCDB3 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E9B65413FB51AC006DCDB3 /* MenuViewController.xib */; };
 		D5E9B65D13FB5568006DCDB3 /* SwiftButtonBlue.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E9B65C13FB5568006DCDB3 /* SwiftButtonBlue.m */; };
 		D5E9B66113FB594A006DCDB3 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E9B66013FB594A006DCDB3 /* MenuViewController.m */; };
@@ -96,6 +103,8 @@
 		D05EA9F613FD270300B8CD89 /* AboutSepaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutSepaViewController.xib; sourceTree = "<group>"; };
 		D0C6AF181405F3F10082DB00 /* WSFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFactory.h; sourceTree = "<group>"; };
 		D0C6AF191405F3F10082DB00 /* WSFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFactory.m; sourceTree = "<group>"; };
+		D531090714094C4C00D5BEA2 /* Ident.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ident.h; sourceTree = "<group>"; };
+		D531090814094C4C00D5BEA2 /* Ident.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ident.m; sourceTree = "<group>"; };
 		D5311D4B1404D2EA00ADB48A /* iphone3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iphone3.png; path = ../iphone3.png; sourceTree = "<group>"; };
 		D5311D4D1404D2FE00ADB48A /* iphone4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iphone4.png; path = ../iphone4.png; sourceTree = "<group>"; };
 		D561316A13FA2D5F0026D7BF /* Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +161,16 @@
 		D5DA1CCF140154A500D4095D /* SwiftConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftConstant.h; sourceTree = "<group>"; };
 		D5DA1CD0140154A500D4095D /* SwiftConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftConstant.m; sourceTree = "<group>"; };
 		D5DA1CD4140161B700D4095D /* ErrorList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ErrorList.plist; sourceTree = "<group>"; };
+		D5DCD9FE14089CE700786D6A /* Vortex.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vortex.xcdatamodel; sourceTree = "<group>"; };
+		D5DCDA051408A7CC00786D6A /* Bank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bank.h; sourceTree = "<group>"; };
+		D5DCDA061408A7CC00786D6A /* Bank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bank.m; sourceTree = "<group>"; };
+		D5DCDA081408A84A00786D6A /* LocHeadBank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocHeadBank.h; sourceTree = "<group>"; };
+		D5DCDA091408A84A00786D6A /* LocHeadBank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocHeadBank.m; sourceTree = "<group>"; };
+		D5DCDA0B1408A86400786D6A /* Sepa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sepa.h; sourceTree = "<group>"; };
+		D5DCDA0C1408A86400786D6A /* Sepa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sepa.m; sourceTree = "<group>"; };
+		D5DCDA141408A9FC00786D6A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D5DCDA191408ABCA00786D6A /* Routing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Routing.h; sourceTree = "<group>"; };
+		D5DCDA1A1408ABCA00786D6A /* Routing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Routing.m; sourceTree = "<group>"; };
 		D5E9B65413FB51AC006DCDB3 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		D5E9B65B13FB5568006DCDB3 /* SwiftButtonBlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftButtonBlue.h; sourceTree = "<group>"; };
 		D5E9B65C13FB5568006DCDB3 /* SwiftButtonBlue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftButtonBlue.m; sourceTree = "<group>"; };
@@ -172,6 +191,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5DCDA151408A9FC00786D6A /* CoreData.framework in Frameworks */,
 				D561316F13FA2D5F0026D7BF /* UIKit.framework in Frameworks */,
 				D561317113FA2D5F0026D7BF /* Foundation.framework in Frameworks */,
 				D561317313FA2D5F0026D7BF /* CoreGraphics.framework in Frameworks */,
@@ -194,6 +214,7 @@
 		D561315F13FA2D5F0026D7BF = {
 			isa = PBXGroup;
 			children = (
+				D5DCDA141408A9FC00786D6A /* CoreData.framework */,
 				D561317413FA2D5F0026D7BF /* Swift */,
 				D561319413FA2D600026D7BF /* SwiftTests */,
 				D561316D13FA2D5F0026D7BF /* Frameworks */,
@@ -318,6 +339,7 @@
 		D56131B213FA92810026D7BF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D5DCDA041408A79500786D6A /* ManagedObjects */,
 				D5E9B65E13FB5924006DCDB3 /* ViewControllers */,
 				D5E9B65913FB54B0006DCDB3 /* Utilities */,
 				D56131B413FA93690026D7BF /* delegate */,
@@ -350,8 +372,26 @@
 			isa = PBXGroup;
 			children = (
 				D56AD45B1400ABDA009BDE17 /* countries.xml */,
+				D5DCD9FD14089CE700786D6A /* Vortex.xcdatamodeld */,
 			);
 			name = DataModel;
+			sourceTree = "<group>";
+		};
+		D5DCDA041408A79500786D6A /* ManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+				D531090714094C4C00D5BEA2 /* Ident.h */,
+				D531090814094C4C00D5BEA2 /* Ident.m */,
+				D5DCDA191408ABCA00786D6A /* Routing.h */,
+				D5DCDA1A1408ABCA00786D6A /* Routing.m */,
+				D5DCDA0B1408A86400786D6A /* Sepa.h */,
+				D5DCDA0C1408A86400786D6A /* Sepa.m */,
+				D5DCDA081408A84A00786D6A /* LocHeadBank.h */,
+				D5DCDA091408A84A00786D6A /* LocHeadBank.m */,
+				D5DCDA051408A7CC00786D6A /* Bank.h */,
+				D5DCDA061408A7CC00786D6A /* Bank.m */,
+			);
+			name = ManagedObjects;
 			sourceTree = "<group>";
 		};
 		D5E9B65913FB54B0006DCDB3 /* Utilities */ = {
@@ -558,6 +598,12 @@
 				D05EA9F713FD270400B8CD89 /* AboutSepaViewController.m in Sources */,
 				D5DA1CD1140154A500D4095D /* SwiftConstant.m in Sources */,
 				D0C6AF1A1405F3F10082DB00 /* WSFactory.m in Sources */,
+				D5DCD9FF14089CE700786D6A /* Vortex.xcdatamodeld in Sources */,
+				D5DCDA071408A7CC00786D6A /* Bank.m in Sources */,
+				D5DCDA0A1408A84A00786D6A /* LocHeadBank.m in Sources */,
+				D5DCDA0D1408A86400786D6A /* Sepa.m in Sources */,
+				D5DCDA1B1408ABCA00786D6A /* Routing.m in Sources */,
+				D531090914094C4C00D5BEA2 /* Ident.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,6 +790,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D5DCD9FD14089CE700786D6A /* Vortex.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D5DCD9FE14089CE700786D6A /* Vortex.xcdatamodel */,
+			);
+			currentVersion = D5DCD9FE14089CE700786D6A /* Vortex.xcdatamodel */;
+			path = Vortex.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D561316113FA2D5F0026D7BF /* Project object */;
 }
