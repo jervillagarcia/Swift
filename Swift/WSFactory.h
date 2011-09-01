@@ -7,13 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Bank.h"
 
 @interface WSFactory : NSObject {
+
+    NSArray * wsResponse;
     
 }
 
--(void)getBankDetailsWithIban:(NSString*)iban bic:(NSString*)bic currency:(NSString*)currency;
+@property (nonatomic, retain) NSArray * wsResponse;
+
+-(Bank*)getBankDetailsWithIban:(NSString*)iban bic:(NSString*)bic currency:(NSString*)currency;
 
 -(NSString*)getStartHeader;
 -(NSString*)getEndFooter;

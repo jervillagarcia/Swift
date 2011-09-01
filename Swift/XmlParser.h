@@ -36,13 +36,13 @@
 
 @property (retain) NSString *className;
 @property (retain) NSString *uri;
-//@property (retain) NSMutableArray *items;
+@property (retain) NSMutableArray *items;
 @property (retain) NSObject *item;
 @property (retain) NSString *currentNodeName;
 @property (retain) NSMutableString *currentNodeContent;
 
 - (NSArray *)items;
 //- (id)parseXMLData:(NSData *)data toObject:(NSString *)aClassName parseError:(NSError **)error;
-- (id)parseXMLData:(NSData *)data fromURI:(NSString*)fromURI toObject:(NSString *)aClassName subItems:(NSArray*)subitems parseError:(NSError **)error;
+- (id)parseXMLData:(NSData *)data fromURI:(NSString*)fromURI toObject:(NSString *)aClassName parseError:(NSError **)error;
 
 @end

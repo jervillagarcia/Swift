@@ -10,18 +10,18 @@
 #import "Ident.h"
 
 @interface Routing : NSObject {
-    NSString * name;
-    NSString * address;
-    NSString * city;
-    NSString * location;
-    NSString * countryKv;
-    Ident * ident;
+    NSString * NAME;
+    NSString * ADDRESS;
+    NSString * CITY;
+    NSString * LOCATION;
+    NSString * COUNTRYKV;
+    Ident * IDENT;
 }
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * address;
-@property (nonatomic, retain) NSString * city;
-@property (nonatomic, retain) NSString * location;
-@property (nonatomic, retain) NSString * countryKv;
-@property (nonatomic, retain) Ident * ident;
+@property (nonatomic, retain) NSString * NAME;
+@property (nonatomic, retain) NSString * ADDRESS;
+@property (nonatomic, retain) NSString * CITY;
+@property (nonatomic, retain) NSString * LOCATION;
+@property (nonatomic, retain) NSString * COUNTRYKV;
+@property (nonatomic, retain) Ident * IDENT;
 
 @end

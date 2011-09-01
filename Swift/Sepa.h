@@ -10,7 +10,9 @@
 
 
 @interface Sepa : NSObject {
-    BOOL compliant;
+    NSString * COMPLIANT;
 }
+
+@property (nonatomic, retain) NSString * COMPLIANT;
 
 @end

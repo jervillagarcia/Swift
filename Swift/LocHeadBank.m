@@ -11,11 +11,22 @@
 
 @implementation LocHeadBank
 
-@synthesize city;
-@synthesize address;
-@synthesize countryKv;
-@synthesize location;
-@synthesize name;
-@synthesize routing;
+@synthesize CITY;
+@synthesize ADDRESS;
+@synthesize COUNTRYKV;
+@synthesize LOCATION;
+@synthesize NAME;
+@synthesize IDENT;
+@synthesize ROUTING;
+
+-(id)init {
+    ROUTING = [[NSMutableArray alloc] init];
+    return self;
+    
+}
+
+-(void)addRouting:(Routing*)routing {
+    [ROUTING addObject:routing];
+}
 
 @end

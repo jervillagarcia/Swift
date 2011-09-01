@@ -11,4 +11,6 @@
 
 @implementation Sepa
 
+@synthesize COMPLIANT;
+
 @end

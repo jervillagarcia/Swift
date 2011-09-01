@@ -13,7 +13,7 @@
 
 @synthesize className;
 @synthesize uri;
-//@synthesize items;
+@synthesize items;
 @synthesize item;
 @synthesize currentNodeName;
 @synthesize currentNodeContent;
@@ -53,7 +53,7 @@
 }
 */
 
-- (id)parseXMLData:(NSData *)data fromURI:(NSString*)fromURI toObject:(NSString *)aClassName subItems:(NSArray*)subitems parseError:(NSError **)error
+- (id)parseXMLData:(NSData *)data fromURI:(NSString*)fromURI toObject:(NSString *)aClassName parseError:(NSError **)error
 {
 	
 	[items release];
@@ -104,6 +104,9 @@
         currentSepa = [[Sepa alloc] init];
     }else if ([elementName  isEqualToString:@"BANK"]) {
         currentBank = [[Bank alloc] init];
+    }else{
+        currentNodeName = [elementName copy];
+        currentNodeContent = [[NSMutableString alloc] init];
     }
 }
 
@@ -129,17 +132,35 @@
     
     if ([elementName  isEqualToString:@"BANK"]) {
         [items addObject:currentBank];
+        
+        [currentBank release];
+        currentBank = nil;
     }else if ([elementName  isEqualToString:@"SEPA"]) {
         [currentBank setSEPA:currentSepa];
+        
+        [currentSepa release];
+        currentSepa = nil;
     }else if ([elementName  isEqualToString:@"LOCHEADBANK"]) {
         [currentBank setLOCHEADBANK:currentLocHeadBank];
+        
+        [currentLocHeadBank release];
+        currentLocHeadBank = nil;
     }else if ([elementName  isEqualToString:@"ROUTING"]) {
 //        [currentLocHeadBank add
+        [currentLocHeadBank addRouting:currentRouting];
+        
+        [currentRouting release];
+        currentRouting = nil;
     }else if ([elementName  isEqualToString:@"IDENT"]) {
-        if (currentRouting)
-            [currentRouting setIdent:currentIdent];
-        else
+        if (currentRouting){
+            [currentRouting setIDENT:currentIdent];
+        }else if (currentLocHeadBank) {
+            [currentLocHeadBank setIDENT:currentIdent];
+        }else{
             [currentBank setIDENT:currentIdent];
+        }
+        [currentIdent release];
+        currentIdent = nil;
     }else{
         if (currentIdent) {
             [currentIdent setValue:currentNodeContent forKey:elementName];
@@ -147,25 +168,25 @@
             [currentNodeContent release];
             currentNodeContent = nil;
             
-        } if (currentRouting) {
+        } else if (currentRouting) {
             [currentRouting setValue:currentNodeContent forKey:elementName];
             
             [currentNodeContent release];
             currentNodeContent = nil;
             
-        } if (currentLocHeadBank) {
+        } else if (currentSepa) {
+            [currentSepa setValue:currentNodeContent forKey:elementName];
+            
+            [currentNodeContent release];
+            currentNodeContent = nil;
+        } else if (currentLocHeadBank) {
             [currentLocHeadBank setValue:currentNodeContent forKey:elementName];
             
             [currentNodeContent release];
             currentNodeContent = nil;
             
-        } if (currentSepa) {
-            [currentLocHeadBank setValue:currentNodeContent forKey:elementName];
-            
-            [currentNodeContent release];
-            currentNodeContent = nil;
-        } if (currentBank) {
-            [currentLocHeadBank setValue:currentNodeContent forKey:elementName];
+        } else if (currentBank) {
+            [currentBank setValue:currentNodeContent forKey:elementName];
             
             [currentNodeContent release];
             currentNodeContent = nil;

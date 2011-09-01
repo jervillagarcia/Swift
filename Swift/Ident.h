@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface Ident : NSObject {
-    NSString * value;
-    NSString * bic;
-    NSString * name;
+    NSString * VALUE;
+    NSString * BIC;
+    NSString * NAME;
 }
-@property (nonatomic, retain) NSString * value;
-@property (nonatomic, retain) NSString * bic;
-@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * VALUE;
+@property (nonatomic, retain) NSString * BIC;
+@property (nonatomic, retain) NSString * NAME;
 
 @end

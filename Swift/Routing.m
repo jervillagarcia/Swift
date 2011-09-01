@@ -12,12 +12,12 @@
 
 
 @implementation Routing
-@synthesize name;
-@synthesize address;
-@synthesize city;
-@synthesize location;
-@synthesize countryKv;
-@synthesize ident;
+@synthesize NAME;
+@synthesize ADDRESS;
+@synthesize CITY;
+@synthesize LOCATION;
+@synthesize COUNTRYKV;
+@synthesize IDENT;
 
 
 

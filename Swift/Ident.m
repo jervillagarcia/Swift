@@ -10,9 +10,9 @@
 
 
 @implementation Ident
-@synthesize value;
-@synthesize bic;
-@synthesize name;
+@synthesize VALUE;
+@synthesize BIC;
+@synthesize NAME;
 
 
 

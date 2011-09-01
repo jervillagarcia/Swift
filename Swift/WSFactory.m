@@ -18,6 +18,8 @@
 #define AUTH_USERNAME @"petrauser1"
 #define AUTH_PASSWORD @"P8tr@Us8r!"
 
+@synthesize wsResponse;
+
 -(NSData*)submitRequestToHost:(NSString*)requestString soapAction:(NSString*)sAction{
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
@@ -57,7 +59,7 @@
     
 }
 
--(void)getBankDetailsWithIban:(NSString*)iban bic:(NSString*)bic currency:(NSString*)currency {
+-(Bank*)getBankDetailsWithIban:(NSString*)iban bic:(NSString*)bic currency:(NSString*)currency {
     NSMutableString *sRequest = [[NSMutableString alloc] init];
     
     [sRequest appendString:[self getStartHeader]];
@@ -73,14 +75,18 @@
     
     NSError *parseErr;
     
-    [parser parseXMLData:dat fromURI:@"DATAROOT" toObject:@"Bank" subItems:[NSArray arrayWithObjects:@"IDENT", @"LOCHEADBANK", "SEPA", nil] parseError:&parseErr];
+    [parser parseXMLData:dat fromURI:@"DATAROOT" toObject:@"Bank" parseError:&parseErr];
     
-    NSString *sampleOutput = [[NSString alloc] initWithData:dat encoding:NSASCIIStringEncoding];
+    [wsResponse release];
+    self.wsResponse = [[[NSMutableArray alloc] initWithArray:[parser items]] autorelease];
+        
+//    NSString *sampleOutput = [[NSString alloc] initWithData:dat encoding:NSASCIIStringEncoding];
+//    NSLog(@"Request: %@", sRequest);
+//    NSLog(@"Output: %@", sampleOutput);
     
-    NSLog(@"Request: %@", sRequest);
-    NSLog(@"Output: %@", sampleOutput);
+    Bank *bank = [wsResponse objectAtIndex:0];
     
-    
+    return bank;
 }
     
 -(NSString*)getStartHeader {
