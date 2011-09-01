@@ -7,24 +7,37 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Ident.h"
+#import "Routing.h"
+#import "LocHeadBank.h"
+#import "Sepa.h"
+#import "Bank.h"
 
 @interface XmlParser : NSObject<NSXMLParserDelegate> {
 	NSString *className;
 	NSString *uri;
 	NSMutableArray *items;
 	NSObject *item;
-    NSObject *subitem;
 	NSString *currentNodeName;
 	NSMutableString *currentNodeContent;
-    NSArray *subItems;
+    
+    Ident *currentIdent;
+    Routing *currentRouting;
+    LocHeadBank *currentLocHeadBank;
+    Sepa *currentSepa;
+    Bank *currentBank;
 }
 
-@property (retain) NSArray *subItems;
+@property (retain) Ident *currentIdent;
+@property (retain) Routing *currentRouting;
+@property (retain) LocHeadBank *currentLocHeadBank;
+@property (retain) Sepa *currentSepa;
+@property (retain) Bank *currentBank;
+
 @property (retain) NSString *className;
 @property (retain) NSString *uri;
 //@property (retain) NSMutableArray *items;
 @property (retain) NSObject *item;
-@property (retain) NSObject *subitem;
 @property (retain) NSString *currentNodeName;
 @property (retain) NSMutableString *currentNodeContent;
 

@@ -15,9 +15,16 @@
 @synthesize uri;
 //@synthesize items;
 @synthesize item;
-@synthesize subitem;
 @synthesize currentNodeName;
 @synthesize currentNodeContent;
+
+@synthesize currentIdent;
+@synthesize currentRouting;
+@synthesize currentLocHeadBank;
+@synthesize currentSepa;
+@synthesize currentBank;
+
+
 
 - (NSArray *)items
 {
@@ -52,9 +59,6 @@
 	[items release];
 	items = [[NSMutableArray alloc] init];
 	
-	[subItems release];
-	subItems = [subitems copy];
-
 	[className release];
 	className = [aClassName copy];//[[NSString alloc] initWithString:aClassName];
 	
@@ -79,38 +83,95 @@
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
-	if([[elementName uppercaseString] isEqualToString:[uri uppercaseString]] || [elementName isEqualToString:@"Fault"]) {
-		item = [[NSClassFromString([[elementName uppercaseString] isEqualToString:[uri uppercaseString]]?className:@"Fault") alloc] init];
-	}
-	else {
-        if ([subItems 
-        subitem = [[NSClassFromString([[elementName uppercaseString] isEqualToString:[uri uppercaseString]]?className:@"Fault") alloc] init];
-		if (![elementName isEqualToString:@"NULL"]){
-			currentNodeName = [elementName copy];
-			currentNodeContent = [[NSMutableString alloc] init];
-		}
-	}
+//	if([[elementName uppercaseString] isEqualToString:[uri uppercaseString]] || [elementName isEqualToString:@"Fault"]) {
+//		item = [[NSClassFromString([[elementName uppercaseString] isEqualToString:[uri uppercaseString]]?className:@"Fault") alloc] init];
+//	}
+//	else {
+//        if ([subItems 
+//        subitem = [[NSClassFromString([[elementName uppercaseString] isEqualToString:[uri uppercaseString]]?className:@"Fault") alloc] init];
+//		if (![elementName isEqualToString:@"NULL"]){
+//			currentNodeName = [elementName copy];
+//			currentNodeContent = [[NSMutableString alloc] init];
+//		}
+//	}
+    if ([elementName  isEqualToString:@"IDENT"]) {
+        currentIdent = [[Ident alloc] init];
+    }else if ([elementName  isEqualToString:@"ROUTING"]) {
+        currentRouting = [[Routing alloc] init];
+    }else if ([elementName  isEqualToString:@"LOCHEADBANK"]) {
+        currentLocHeadBank = [[LocHeadBank alloc] init];
+    }else if ([elementName  isEqualToString:@"SEPA"]) {
+        currentSepa = [[Sepa alloc] init];
+    }else if ([elementName  isEqualToString:@"BANK"]) {
+        currentBank = [[Bank alloc] init];
+    }
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
-	if([elementName isEqualToString:uri] || [elementName isEqualToString:@"Fault"]) {
-		
-		[items addObject:item];
-		[item release];
-		item = nil;
-	}
-	else if([elementName isEqualToString:currentNodeName] && [elementName isEqualToString:@"Header"] == NO) {
-		if (![elementName isEqualToString:@"NULL"]){
-            [item setValue:currentNodeContent forKey:elementName];
-			
-			[currentNodeContent release];
-			currentNodeContent = nil;
-			
-			[currentNodeName release];
-			currentNodeName = nil;
-		}
-	}
+//	if([elementName isEqualToString:uri] || [elementName isEqualToString:@"Fault"]) {
+//		
+//		[items addObject:item];
+//		[item release];
+//		item = nil;
+//	}
+//	else if([elementName isEqualToString:currentNodeName] && [elementName isEqualToString:@"Header"] == NO) {
+//		if (![elementName isEqualToString:@"NULL"]){
+//            [item setValue:currentNodeContent forKey:elementName];
+//			
+//			[currentNodeContent release];
+//			currentNodeContent = nil;
+//			
+//			[currentNodeName release];
+//			currentNodeName = nil;
+//		}
+//	}
+    
+    if ([elementName  isEqualToString:@"BANK"]) {
+        [items addObject:currentBank];
+    }else if ([elementName  isEqualToString:@"SEPA"]) {
+        [currentBank setSEPA:currentSepa];
+    }else if ([elementName  isEqualToString:@"LOCHEADBANK"]) {
+        [currentBank setLOCHEADBANK:currentLocHeadBank];
+    }else if ([elementName  isEqualToString:@"ROUTING"]) {
+//        [currentLocHeadBank add
+    }else if ([elementName  isEqualToString:@"IDENT"]) {
+        if (currentRouting)
+            [currentRouting setIdent:currentIdent];
+        else
+            [currentBank setIDENT:currentIdent];
+    }else{
+        if (currentIdent) {
+            [currentIdent setValue:currentNodeContent forKey:elementName];
+        
+            [currentNodeContent release];
+            currentNodeContent = nil;
+            
+        } if (currentRouting) {
+            [currentRouting setValue:currentNodeContent forKey:elementName];
+            
+            [currentNodeContent release];
+            currentNodeContent = nil;
+            
+        } if (currentLocHeadBank) {
+            [currentLocHeadBank setValue:currentNodeContent forKey:elementName];
+            
+            [currentNodeContent release];
+            currentNodeContent = nil;
+            
+        } if (currentSepa) {
+            [currentLocHeadBank setValue:currentNodeContent forKey:elementName];
+            
+            [currentNodeContent release];
+            currentNodeContent = nil;
+        } if (currentBank) {
+            [currentLocHeadBank setValue:currentNodeContent forKey:elementName];
+            
+            [currentNodeContent release];
+            currentNodeContent = nil;
+        }
+    }
+    
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
