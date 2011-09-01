@@ -10,15 +10,15 @@
 
 
 @implementation Bank
-@synthesize location;
-@synthesize iban;
-@synthesize countryKv;
+@synthesize LOCATION;
+@synthesize IBAN;
+@synthesize COUNTRYKV;
 @synthesize name;
-@synthesize city;
-@synthesize address;
-@synthesize locHeadBank;
-@synthesize ident;
-@synthesize sepa;
+@synthesize CITY;
+@synthesize ADDRESS;
+@synthesize LOCHEADBANK;
+@synthesize IDENT;
+@synthesize SEPA;
 
 
 @end

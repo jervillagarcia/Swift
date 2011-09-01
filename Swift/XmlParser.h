@@ -1,31 +1,35 @@
 //
 //  XmlParser.h
-//  CaxtonFX
+//  Swift
 //
-//  Created by Reg on 11/20/09.
-//  Copyright 2009 Petra Financial Ltd. All rights reserved.
+//  Created by James Errol Villagarcia on 8/25/11.
+//  Copyright 2011 ApplyFinancial. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface XmlParser : NSObject {
+@interface XmlParser : NSObject<NSXMLParserDelegate> {
 	NSString *className;
 	NSString *uri;
 	NSMutableArray *items;
 	NSObject *item;
+    NSObject *subitem;
 	NSString *currentNodeName;
 	NSMutableString *currentNodeContent;
+    NSArray *subItems;
 }
 
+@property (retain) NSArray *subItems;
 @property (retain) NSString *className;
 @property (retain) NSString *uri;
-@property (retain) NSMutableArray *items;
+//@property (retain) NSMutableArray *items;
 @property (retain) NSObject *item;
+@property (retain) NSObject *subitem;
 @property (retain) NSString *currentNodeName;
 @property (retain) NSMutableString *currentNodeContent;
 
 - (NSArray *)items;
 //- (id)parseXMLData:(NSData *)data toObject:(NSString *)aClassName parseError:(NSError **)error;
-- (id)parseXMLData:(NSData *)data fromURI:(NSString*)fromURI toObject:(NSString *)aClassName parseError:(NSError **)error;
+- (id)parseXMLData:(NSData *)data fromURI:(NSString*)fromURI toObject:(NSString *)aClassName subItems:(NSArray*)subitems parseError:(NSError **)error;
 
 @end

@@ -13,24 +13,24 @@
 
 
 @interface Bank : NSObject {
-    NSString * location;
-    NSString * iban;
-    NSString * countryKv;
-    NSString * name;
-    NSString * city;
-    NSString * address;
-    LocHeadBank * locHeadBank;
-    Ident * ident;
-    Sepa * sepa;
+    NSString * LOCATION;
+    NSString * IBAN;
+    NSString * COUNTRYKV;
+    NSString * NAME;
+    NSString * CITY;
+    NSString * ADDRESS;
+    LocHeadBank * LOCHEADBANK;
+    Ident * IDENT;
+    Sepa * SEPA;
 }
-@property (nonatomic, retain) NSString * location;
-@property (nonatomic, retain) NSString * iban;
-@property (nonatomic, retain) NSString * countryKv;
+@property (nonatomic, retain) NSString * LOCATION;
+@property (nonatomic, retain) NSString * IBAN;
+@property (nonatomic, retain) NSString * COUNTRYKV;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * city;
-@property (nonatomic, retain) NSString * address;
-@property (nonatomic, retain) LocHeadBank * locHeadBank;
-@property (nonatomic, retain) Ident * ident;
-@property (nonatomic, retain) Sepa * sepa;
+@property (nonatomic, retain) NSString * CITY;
+@property (nonatomic, retain) NSString * ADDRESS;
+@property (nonatomic, retain) LocHeadBank * LOCHEADBANK;
+@property (nonatomic, retain) Ident * IDENT;
+@property (nonatomic, retain) Sepa * SEPA;
 
 @end

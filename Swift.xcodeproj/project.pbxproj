@@ -217,7 +217,6 @@
 		D561315F13FA2D5F0026D7BF = {
 			isa = PBXGroup;
 			children = (
-				D5DCDA141408A9FC00786D6A /* CoreData.framework */,
 				D561317413FA2D5F0026D7BF /* Swift */,
 				D561319413FA2D600026D7BF /* SwiftTests */,
 				D561316D13FA2D5F0026D7BF /* Frameworks */,
@@ -237,6 +236,7 @@
 		D561316D13FA2D5F0026D7BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D5DCDA141408A9FC00786D6A /* CoreData.framework */,
 				D56AD45D1400B95E009BDE17 /* CFNetwork.framework */,
 				D561316E13FA2D5F0026D7BF /* UIKit.framework */,
 				D561317013FA2D5F0026D7BF /* Foundation.framework */,
@@ -400,13 +400,13 @@
 		D5E9B65913FB54B0006DCDB3 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				D0DF2E7E140C661A00339174 /* XmlParser.h */,
-				D0DF2E7F140C661A00339174 /* XmlParser.m */,
 				D5E9B65A13FB54BD006DCDB3 /* CustomObjects */,
 				D5DA1CCF140154A500D4095D /* SwiftConstant.h */,
 				D5DA1CD0140154A500D4095D /* SwiftConstant.m */,
 				D0C6AF181405F3F10082DB00 /* WSFactory.h */,
 				D0C6AF191405F3F10082DB00 /* WSFactory.m */,
+				D0DF2E7E140C661A00339174 /* XmlParser.h */,
+				D0DF2E7F140C661A00339174 /* XmlParser.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";

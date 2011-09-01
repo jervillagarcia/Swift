@@ -7,7 +7,7 @@
 //
 
 #import "WSFactory.h"
-
+#import "XmlParser.h"
 
 @implementation WSFactory
 
@@ -68,7 +68,12 @@
     [sRequest appendString:@"</sch:DATAINPUT1>"];
     [sRequest appendString:[self getEndFooter]];
     
+    XmlParser *parser = [[XmlParser alloc] init];
     NSData *dat = [self submitRequestToHost:sRequest soapAction:@"GetBankDetails"];
+    
+    NSError *parseErr;
+    
+    [parser parseXMLData:dat fromURI:@"DATAROOT" toObject:@"Bank" subItems:[NSArray arrayWithObjects:@"IDENT", @"LOCHEADBANK", "SEPA", nil] parseError:&parseErr];
     
     NSString *sampleOutput = [[NSString alloc] initWithData:dat encoding:NSASCIIStringEncoding];
     

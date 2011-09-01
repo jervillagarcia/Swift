@@ -1,9 +1,9 @@
 //
 //  XmlParser.m
-//  CaxtonFX
+//  Swift
 //
-//  Created by Reg on 11/20/09.
-//  Copyright 2009 Petra Financial Ltd. All rights reserved.
+//  Created by James Errol Villagarcia on 8/25/11.
+//  Copyright 2011 ApplyFinancial. All rights reserved.
 //
 
 #import "XmlParser.h"
@@ -13,8 +13,9 @@
 
 @synthesize className;
 @synthesize uri;
-@synthesize items;
+//@synthesize items;
 @synthesize item;
+@synthesize subitem;
 @synthesize currentNodeName;
 @synthesize currentNodeContent;
 
@@ -45,16 +46,19 @@
 }
 */
 
-- (id)parseXMLData:(NSData *)data fromURI:(NSString*)fromURI toObject:(NSString *)aClassName parseError:(NSError **)error
+- (id)parseXMLData:(NSData *)data fromURI:(NSString*)fromURI toObject:(NSString *)aClassName subItems:(NSArray*)subitems parseError:(NSError **)error
 {
 	
 	[items release];
 	items = [[NSMutableArray alloc] init];
 	
+	[subItems release];
+	subItems = [subitems copy];
+
 	[className release];
 	className = [aClassName copy];//[[NSString alloc] initWithString:aClassName];
 	
-	[uri release];
+	//[uri release];
 	uri = [fromURI copy];
 	
 	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
@@ -75,10 +79,12 @@
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
-	if([elementName isEqualToString:uri] || [elementName isEqualToString:@"Fault"]) {
-		item = [[NSClassFromString([elementName isEqualToString:uri]?className:@"Fault") alloc] init];
+	if([[elementName uppercaseString] isEqualToString:[uri uppercaseString]] || [elementName isEqualToString:@"Fault"]) {
+		item = [[NSClassFromString([[elementName uppercaseString] isEqualToString:[uri uppercaseString]]?className:@"Fault") alloc] init];
 	}
 	else {
+        if ([subItems 
+        subitem = [[NSClassFromString([[elementName uppercaseString] isEqualToString:[uri uppercaseString]]?className:@"Fault") alloc] init];
 		if (![elementName isEqualToString:@"NULL"]){
 			currentNodeName = [elementName copy];
 			currentNodeContent = [[NSMutableString alloc] init];
@@ -95,9 +101,8 @@
 		item = nil;
 	}
 	else if([elementName isEqualToString:currentNodeName] && [elementName isEqualToString:@"Header"] == NO) {
-		
 		if (![elementName isEqualToString:@"NULL"]){
-			[item setValue:currentNodeContent forKey:elementName];
+            [item setValue:currentNodeContent forKey:elementName];
 			
 			[currentNodeContent release];
 			currentNodeContent = nil;
