@@ -11,6 +11,10 @@
 
 @implementation IbanSearchViewController
 
+@synthesize txtIban;
+@synthesize keyboardToolbar;
+@synthesize textDelegate;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -56,9 +60,21 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark Actions (Buttons)
+#pragma mark -
 - (IBAction)clickSearch:(id)sender {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     WSFactory *ws = [[WSFactory alloc] init];
-    [ws getBankDetailsWithIban:@"" bic:@"" currency:@""];
+
+    [ws validateIBAN:txtIban.text];
+	
+    [ws release];
+	[pool release];
 }
+
+- (IBAction)clickClear:(id)sender {
+    [txtIban setText:@""];
+}
+
 
 @end

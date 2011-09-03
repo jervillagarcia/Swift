@@ -1,31 +1,21 @@
 //
-//  BicSearchViewController.m
+//  CountryLookupViewController.m
 //  Swift
 //
-//  Created by Errol on 8/17/11.
+//  Created by James Errol Villagarcia on 9/3/11.
 //  Copyright 2011 ApplyFinancial. All rights reserved.
 //
 
-#import "BicSearchViewController.h"
-#import "BankSearchViewController.h"
+#import "CountryLookupViewController.h"
 
-@implementation BicSearchViewController
 
-@synthesize txtBic;
-@synthesize txtInstitutionName;
-@synthesize txtNationalId;
-@synthesize txtCity;
-@synthesize txtCountry;
-@synthesize btnCountryLookup;
-@synthesize btnClear;
-@synthesize btnSearch;
+@implementation CountryLookupViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self.tabBarItem setTitle:@"Check BIC"];
-        [self.tabBarItem setImage:[UIImage imageNamed:@"21-check_bic_logo.png"]];
+        // Custom initialization
     }
     return self;
 }
@@ -63,25 +53,5 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-
-#pragma mark Action(Buttons)
--(IBAction)clearAction:(id)sender{
-    
-}
--(IBAction)searchAction:(id)sender{
-    BankSearchViewController *viewController = [[BankSearchViewController alloc] initWithNibName:@"BankSearchViewController" bundle:nil];
-    [[self navigationController] pushViewController:viewController animated:YES];
-    [viewController release];
-}
-
--(IBAction)countryLookupAction:(id)sender{
-    
-}
-
-#pragma mark Action(Methods)
--(void)showCountryLookup{
-    
-}
-
 
 @end

@@ -20,45 +20,8 @@
 
 @synthesize wsResponse;
 
--(NSData*)submitRequestToHost:(NSString*)requestString soapAction:(NSString*)sAction{
-    
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    NSMutableData *mData;
-    
-    NSURL *soapURL = [NSURL URLWithString:VORTEX_URL];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:soapURL];
-    NSString* soapAction = [[NSString alloc] initWithString:SOAP_ACTION];
-    
-    [request addValue:@"text/xml; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
-    [request addValue:[soapAction stringByAppendingString:sAction] forHTTPHeaderField:@"action"];
-    [request setHTTPMethod:@"POST"];
-    
-    [request setHTTPBody:[requestString dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    
-    NSLog(@"soapURL: %@", soapURL);
-    
-    [NSURLConnection connectionWithRequest:request delegate:self];
-    
-    NSError *WSerror;
-    NSURLResponse *WSresponse;
-    mData = [[NSMutableData alloc] initWithData:[NSURLConnection sendSynchronousRequest:request returningResponse:&WSresponse error:&WSerror]];
-    
-    if (WSerror && !WSresponse) {
-//        [mData release];
-//        mData = [NSMutableData alloc] initWithData:[self giveErrorDomainNotFound
-        NSLog(@"WS Error: %@", WSerror);
-
-    }
-    [conn release];
-    [soapAction release];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    
-    return mData;
-    
-}
-
+#pragma mark WS Calls
+#pragma mark -
 -(Bank*)getBankDetailsWithIban:(NSString*)iban bic:(NSString*)bic currency:(NSString*)currency {
     NSMutableString *sRequest = [[NSMutableString alloc] init];
     
@@ -88,7 +51,117 @@
     
     return bank;
 }
+
+-(void)validateIBAN:(NSString*)iban {    
+    NSMutableString *sRequest = [[NSMutableString alloc] init];
     
+    [sRequest appendString:[self getStartHeader]];
+    [sRequest appendString:@"<sch:DATAINPUT6>"];
+    [sRequest appendString:@"<sch:IBAN>"];
+    [sRequest appendString:iban];
+    [sRequest appendString:@"</sch:IBAN>"];
+    [sRequest appendString:@"</sch:DATAINPUT6>"];
+    [sRequest appendString:[self getEndFooter]];
+    
+    XmlParser *parser = [[XmlParser alloc] init];
+    NSData *dat = [self submitRequestToHost:sRequest soapAction:@"GetBankDetails6"];
+    
+    NSError *parseErr;
+    
+    [parser parseXMLData:dat fromURI:@"DATAROOT" toObject:@"Bank" parseError:&parseErr];
+    
+    [wsResponse release];
+    self.wsResponse = [[[NSMutableArray alloc] initWithArray:[parser items]] autorelease];
+}
+
+-(void)validateBIC:(NSString*)bic {
+    NSMutableString *sRequest = [[NSMutableString alloc] init];
+    
+    [sRequest appendString:[self getStartHeader]];
+    [sRequest appendString:@"<sch:DATAINPUT8>"];
+    [sRequest appendString:@"<sch:BIC>"];
+    [sRequest appendString:bic];
+    [sRequest appendString:@"</sch:BIC>"];
+    [sRequest appendString:@"</sch:DATAINPUT8>"];
+    [sRequest appendString:[self getEndFooter]];
+    
+    XmlParser *parser = [[XmlParser alloc] init];
+    NSData *dat = [self submitRequestToHost:sRequest soapAction:@"GetBankDetails8"];
+    
+    NSError *parseErr;
+    
+    [parser parseXMLData:dat fromURI:@"DATAROOT" toObject:@"Bank" parseError:&parseErr];
+    
+    [wsResponse release];
+    self.wsResponse = [[[NSMutableArray alloc] initWithArray:[parser items]] autorelease];
+}
+
+-(void)validateWithPaymentCode:(NSString*)paymentCode countryCode:(NSString*)countryCode{
+    NSMutableString *sRequest = [[NSMutableString alloc] init];
+    
+    [sRequest appendString:[self getStartHeader]];
+    [sRequest appendString:@"<sch:DATAINPUT7>"];
+    [sRequest appendString:@"<sch:PAYMENTCODE>"];
+    [sRequest appendString:paymentCode];
+    [sRequest appendString:@"</sch:PAYMENTCODE>"];
+    [sRequest appendString:@"<sch:COUNTRYCODE>"];
+    [sRequest appendString:countryCode];
+    [sRequest appendString:@"</sch:COUNTRYCODE>"];
+    [sRequest appendString:@"</sch:DATAINPUT7>"];
+    [sRequest appendString:[self getEndFooter]];
+    
+    XmlParser *parser = [[XmlParser alloc] init];
+    NSData *dat = [self submitRequestToHost:sRequest soapAction:@"GetBankDetails7"];
+    
+    NSError *parseErr;
+    
+    [parser parseXMLData:dat fromURI:@"DATAROOT" toObject:@"Bank" parseError:&parseErr];
+    
+    [wsResponse release];
+    self.wsResponse = [[[NSMutableArray alloc] initWithArray:[parser items]] autorelease];
+}
+
+#pragma mark WS Common
+#pragma mark -
+-(NSData*)submitRequestToHost:(NSString*)requestString soapAction:(NSString*)sAction{
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    NSMutableData *mData;
+    
+    NSURL *soapURL = [NSURL URLWithString:VORTEX_URL];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:soapURL];
+    NSString* soapAction = [[NSString alloc] initWithString:SOAP_ACTION];
+    
+    [request addValue:@"text/xml; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:[soapAction stringByAppendingString:sAction] forHTTPHeaderField:@"action"];
+    [request setHTTPMethod:@"POST"];
+    
+    [request setHTTPBody:[requestString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    NSLog(@"soapURL: %@", soapURL);
+    
+    [NSURLConnection connectionWithRequest:request delegate:self];
+    
+    NSError *WSerror;
+    NSURLResponse *WSresponse;
+    mData = [[NSMutableData alloc] initWithData:[NSURLConnection sendSynchronousRequest:request returningResponse:&WSresponse error:&WSerror]];
+    
+    if (WSerror && !WSresponse) {
+        //        [mData release];
+        //        mData = [NSMutableData alloc] initWithData:[self giveErrorDomainNotFound
+        NSLog(@"WS Error: %@", WSerror);
+        
+    }
+    [conn release];
+    [soapAction release];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
+    return mData;
+    
+}
+
 -(NSString*)getStartHeader {
     NSMutableString *sHeader = [[NSMutableString alloc] init];
     

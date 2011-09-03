@@ -9,11 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface SwiftAppDelegate : NSObject <UIApplicationDelegate> {
-
+    NSArray *countryList;
+    NSString *filePath;
+    NSData *myData;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
+
+@property (nonatomic, retain) NSArray *countryList;
 
 @end

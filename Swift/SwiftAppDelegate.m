@@ -7,6 +7,8 @@
 //
 
 #import "SwiftAppDelegate.h"
+#import "CountryParser.h"
+#import "Country.h"
 
 @implementation SwiftAppDelegate
 
@@ -15,12 +17,26 @@
 
 @synthesize navigationController=_navigationController;
 
+@synthesize countryList;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     // Add the navigation controller's view to the window and display.
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
+    
+    
+    filePath = [[NSBundle mainBundle] pathForResource:@"countries" ofType:@"xml"];
+    myData = [NSData dataWithContentsOfFile:filePath];
+    
+    NSError *parseErr;
+    CountryParser *parser = [[CountryParser alloc] init];
+    [parser parseXMLData:myData fromURI:@"country" toObject:@"Country" parseError:&parseErr];
+    
+    [countryList release];
+    countryList = [[[NSMutableArray alloc] initWithArray:[parser items]] autorelease];
+    
     return YES;
 }
 
@@ -67,6 +83,9 @@
 {
     [_window release];
     [_navigationController release];
+    [filePath release];
+    [myData release];
+    [countryList release];
     [super dealloc];
 }
 

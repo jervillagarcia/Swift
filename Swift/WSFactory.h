@@ -18,7 +18,11 @@
 @property (nonatomic, retain) NSArray * wsResponse;
 
 -(Bank*)getBankDetailsWithIban:(NSString*)iban bic:(NSString*)bic currency:(NSString*)currency;
+-(void)validateIBAN:(NSString*)iban;
+-(void)validateBIC:(NSString*)bic;
+-(void)validateWithPaymentCode:(NSString*)paymentCode countryCode:(NSString*)countryCode;
 
+-(NSData*)submitRequestToHost:(NSString*)requestString soapAction:(NSString*)sAction;
 -(NSString*)getStartHeader;
 -(NSString*)getEndFooter;
 -(NSString*)getHeaderAuth;
