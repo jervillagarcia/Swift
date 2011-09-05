@@ -16,10 +16,12 @@
 @implementation CountryLookupViewController
 
 @synthesize countryList;
+@synthesize countryTable;
+@synthesize searchBar;
 
-- (id)initWithStyle:(UITableViewStyle)style delegate:(id)mDelegate
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil delegate:(id)mDelegate
 {
-    self = [super initWithStyle:style];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
         filePath = [[NSBundle mainBundle] pathForResource:@"countries" ofType:@"xml"];
@@ -33,6 +35,8 @@
         countryList = [[NSMutableArray alloc] initWithArray:[parser items]];
         
         aDelegate = mDelegate;
+        
+        isSearching = NO;
     }
     return self;
 }
@@ -41,6 +45,7 @@
 {
 //    [filePath release];
 //    [myData release];
+    [filteredList release];
     [countryList release]; 
     [super dealloc];
 }
@@ -59,6 +64,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    filteredList = [[NSMutableArray alloc] init];
+    tempList = [[NSMutableArray alloc] init];
 }
 
 - (void)viewDidUnload
@@ -80,10 +87,16 @@
 }
 
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section {
-    return [countryList count];
+    [tempList release];
+    tempList = isSearching ? [filteredList retain] : [(NSMutableArray*) countryList retain];
+    
+    return [tempList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tempList release];
+    tempList = isSearching ? [filteredList retain] : [(NSMutableArray*) countryList retain];
+
     static NSString *cellIdentifier = @"cell";
     
     SwiftCountryCell *cell = (SwiftCountryCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -91,7 +104,7 @@
         cell = [[SwiftCountryCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier country:(Country*)[countryList objectAtIndex:[indexPath row]]];
         NSLog(@"Row: %i", indexPath.row);
     } else {
-        [(SwiftCountryCell*)cell setMCountry:(Country*)[countryList objectAtIndex:[indexPath row]]];
+        [(SwiftCountryCell*)cell setMCountry:(Country*)[tempList objectAtIndex:[indexPath row]]];
     }
      
     return cell;
@@ -103,9 +116,35 @@
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [(BicSearchViewController*)aDelegate setMCountry:(Country*)[countryList objectAtIndex:[indexPath row]]];
+    if (isSearching) {
+        [searchBar resignFirstResponder];
+        isSearching = NO;
+    }
+    
+//    [(BicSearchViewController*)aDelegate setMCountry:(Country*)[countryList objectAtIndex:[indexPath row]]];
+    [(BicSearchViewController*)aDelegate setMCountry:[(SwiftCountryCell*)[tableView cellForRowAtIndexPath:indexPath] country]];
     [self.navigationController popViewControllerAnimated:YES];
     
+}
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if ([searchText isEqualToString:@""]) {
+        isSearching = NO;
+    } else {
+        isSearching = YES;
+    }
+    
+    if (isSearching) {
+        [filteredList removeAllObjects];
+        isSearching = YES;
+        for (Country *model in countryList)
+        {
+            NSRange titleResultsRange = [[NSString stringWithFormat:@"%@ %@", [model countryCode], [model name]] rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if (titleResultsRange.length > 0)
+                [filteredList addObject:model];
+        }
+        [countryTable reloadData];
+    }
 }
 
 @end

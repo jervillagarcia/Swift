@@ -43,7 +43,7 @@
 {
     [super viewDidLoad];
     
-    NSString *urlAddress = @"http://www.ecb.int/paym/sepa/html/index.en.html";
+    NSString *urlAddress = @"http://www.europeanpaymentscouncil.eu/";
     
     //Create a URL object.
     NSURL *url = [NSURL URLWithString:urlAddress];

@@ -43,7 +43,7 @@
 {
     [super viewDidLoad];
 
-    NSString *urlAddress = @"http://www.swift.com/about_swift/index.page?";
+    NSString *urlAddress = @"http://www.swiftrefdata.com/";
     
     //Create a URL object.
     NSURL *url = [NSURL URLWithString:urlAddress];

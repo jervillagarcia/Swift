@@ -21,6 +21,10 @@
 		D0BD452214146C1000DCD882 /* UIActivityHUDDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BD452114146C1000DCD882 /* UIActivityHUDDialog.m */; };
 		D0C6AF1A1405F3F10082DB00 /* WSFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C6AF191405F3F10082DB00 /* WSFactory.m */; };
 		D0DF2E80140C661A00339174 /* XmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DF2E7F140C661A00339174 /* XmlParser.m */; };
+		D51B13B9141510FF0097BE4D /* epcbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = D51B13B7141510FF0097BE4D /* epcbutton.png */; };
+		D51B13BA141510FF0097BE4D /* swiftreflogo.png in Resources */ = {isa = PBXBuildFile; fileRef = D51B13B8141510FF0097BE4D /* swiftreflogo.png */; };
+		D51B13BF14151F760097BE4D /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = D51B13BE14151F760097BE4D /* iTunesArtwork */; };
+		D51B13C11415291A0097BE4D /* back3.png in Resources */ = {isa = PBXBuildFile; fileRef = D51B13C01415291A0097BE4D /* back3.png */; };
 		D531090914094C4C00D5BEA2 /* Ident.m in Sources */ = {isa = PBXBuildFile; fileRef = D531090814094C4C00D5BEA2 /* Ident.m */; };
 		D5311D4C1404D2EA00ADB48A /* iphone3.png in Resources */ = {isa = PBXBuildFile; fileRef = D5311D4B1404D2EA00ADB48A /* iphone3.png */; };
 		D5311D4E1404D2FE00ADB48A /* iphone4.png in Resources */ = {isa = PBXBuildFile; fileRef = D5311D4D1404D2FE00ADB48A /* iphone4.png */; };
@@ -132,6 +136,10 @@
 		D0C6AF191405F3F10082DB00 /* WSFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFactory.m; sourceTree = "<group>"; };
 		D0DF2E7E140C661A00339174 /* XmlParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XmlParser.h; sourceTree = "<group>"; };
 		D0DF2E7F140C661A00339174 /* XmlParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XmlParser.m; sourceTree = "<group>"; };
+		D51B13B7141510FF0097BE4D /* epcbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epcbutton.png; sourceTree = "<group>"; };
+		D51B13B8141510FF0097BE4D /* swiftreflogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swiftreflogo.png; sourceTree = "<group>"; };
+		D51B13BE14151F760097BE4D /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		D51B13C01415291A0097BE4D /* back3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back3.png; sourceTree = "<group>"; };
 		D531090714094C4C00D5BEA2 /* Ident.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ident.h; sourceTree = "<group>"; };
 		D531090814094C4C00D5BEA2 /* Ident.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ident.m; sourceTree = "<group>"; };
 		D5311D4B1404D2EA00ADB48A /* iphone3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iphone3.png; path = ../iphone3.png; sourceTree = "<group>"; };
@@ -289,6 +297,7 @@
 		D561317413FA2D5F0026D7BF /* Swift */ = {
 			isa = PBXGroup;
 			children = (
+				D51B13BE14151F760097BE4D /* iTunesArtwork */,
 				D56131B313FA929A0026D7BF /* Resources */,
 				D56131B213FA92810026D7BF /* Classes */,
 				D56131B113FA92610026D7BF /* images */,
@@ -349,6 +358,9 @@
 		D56131B113FA92610026D7BF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D51B13C01415291A0097BE4D /* back3.png */,
+				D51B13B7141510FF0097BE4D /* epcbutton.png */,
+				D51B13B8141510FF0097BE4D /* swiftreflogo.png */,
 				D5311D4D1404D2FE00ADB48A /* iphone4.png */,
 				D5311D4B1404D2EA00ADB48A /* iphone3.png */,
 				D5665EAD13FF6FEC00F249D1 /* purple_button_big.png */,
@@ -625,6 +637,10 @@
 				D5DFAE8A14147B9100EE6CFC /* CountryLookupViewController.xib in Resources */,
 				D5DFAE9F1414A85300EE6CFC /* BankListViewController.xib in Resources */,
 				D5D6CE241414EE7400AAA922 /* ApplyFinancialViewController.xib in Resources */,
+				D51B13B9141510FF0097BE4D /* epcbutton.png in Resources */,
+				D51B13BA141510FF0097BE4D /* swiftreflogo.png in Resources */,
+				D51B13BF14151F760097BE4D /* iTunesArtwork in Resources */,
+				D51B13C11415291A0097BE4D /* back3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

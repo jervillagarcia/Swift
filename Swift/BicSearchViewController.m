@@ -79,17 +79,17 @@
 }
 
 -(IBAction)searchAction:(id)sender{
-    if ([NetworkUtil checkifConnected]) {
+//    if ([NetworkUtil checkifConnected]) {
         [self performSelector:@selector(fetchBank)];
-    } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Problem" message:@"Could not establish internet connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-        [alert release];
-    }
+//    } else {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Problem" message:@"Could not establish internet connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//        [alert show];
+//        [alert release];
+//    }
 }
 
 -(IBAction)countryLookupAction:(id)sender{
-    CountryLookupViewController *viewController = [[CountryLookupViewController alloc] initWithStyle:UITableViewStylePlain delegate:self];
+    CountryLookupViewController *viewController = [[CountryLookupViewController alloc] initWithNibName:@"CountryLookupViewController" bundle:nil delegate:self];
     [self.navigationController pushViewController:viewController animated:YES];
     [viewController release];
 }
@@ -164,7 +164,7 @@
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField { 
     [txtCountry resignFirstResponder];
-    CountryLookupViewController *viewController = [[CountryLookupViewController alloc] initWithStyle:UITableViewStylePlain delegate:self];
+    CountryLookupViewController *viewController = [[CountryLookupViewController alloc] initWithNibName:@"CountryLookupViewController" bundle:nil delegate:self];
     [self.navigationController pushViewController:viewController animated:YES];
     [viewController release];
 }

@@ -55,13 +55,13 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">bg-1.png</string>
+							<string key="NSResourceName">back3.png</string>
 						</object>
 					</object>
 					<object class="IBUIButton" id="612032211">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 86}, {280, 51}}</string>
+						<string key="NSFrame">{{20, 110}, {280, 51}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="248099216"/>
@@ -99,7 +99,7 @@
 					<object class="IBUIButton" id="248099216">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 145}, {280, 51}}</string>
+						<string key="NSFrame">{{20, 169}, {280, 51}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="408488743"/>
@@ -123,7 +123,7 @@
 					<object class="IBUIButton" id="408488743">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 204}, {280, 51}}</string>
+						<string key="NSFrame">{{20, 228}, {144, 70}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="632500203"/>
@@ -139,19 +139,18 @@
 						<double key="IBUIContentEdgeInsets.bottom">0.0</double>
 						<double key="IBUIContentEdgeInsets.left">20</double>
 						<double key="IBUIContentEdgeInsets.right">0.0</double>
-						<string key="IBUINormalTitle">About SWIFT</string>
 						<reference key="IBUIHighlightedTitleColor" ref="342360927"/>
 						<reference key="IBUINormalTitleColor" ref="342360927"/>
 						<reference key="IBUINormalTitleShadowColor" ref="606314950"/>
 						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">swift_menubutton.png</string>
+							<string key="NSResourceName">swiftreflogo.png</string>
 						</object>
 					</object>
 					<object class="IBUIButton" id="632500203">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 263}, {280, 51}}</string>
+						<string key="NSFrame">{{172, 228}, {128, 70}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="352525871"/>
@@ -163,13 +162,13 @@
 						<double key="IBUIContentEdgeInsets.bottom">0.0</double>
 						<double key="IBUIContentEdgeInsets.left">20</double>
 						<double key="IBUIContentEdgeInsets.right">0.0</double>
-						<string key="IBUINormalTitle">About SEPA</string>
+						<string key="IBUINormalTitle">\</string>
 						<reference key="IBUIHighlightedTitleColor" ref="342360927"/>
 						<reference key="IBUINormalTitleColor" ref="342360927"/>
 						<reference key="IBUINormalTitleShadowColor" ref="606314950"/>
 						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">sepa_menubutton.png</string>
+							<string key="NSResourceName">epcbutton.png</string>
 						</object>
 					</object>
 					<object class="IBUILabel" id="961380686">
@@ -185,7 +184,11 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<string key="IBUIText">Menu</string>
-						<reference key="IBUIFont" ref="15970084"/>
+						<object class="NSFont" key="IBUIFont">
+							<string key="NSName">Helvetica-Bold</string>
+							<double key="NSSize">24</double>
+							<int key="NSfFlags">16</int>
+						</object>
 						<reference key="IBUITextColor" ref="342360927"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
@@ -369,12 +372,12 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="496232219"/>
 							<reference ref="248099216"/>
-							<reference ref="632500203"/>
 							<reference ref="612032211"/>
-							<reference ref="408488743"/>
 							<reference ref="961380686"/>
 							<reference ref="152548299"/>
 							<reference ref="352525871"/>
+							<reference ref="632500203"/>
+							<reference ref="408488743"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -602,23 +605,23 @@
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<object class="NSArray" key="dict.sortedKeys">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<string>bg-1.png</string>
+				<string>back3.png</string>
 				<string>checkbban_menubutton.png</string>
 				<string>checkiban_menubutton.png</string>
+				<string>epcbutton.png</string>
 				<string>info.png</string>
 				<string>powerdby_apply_logo.png</string>
-				<string>sepa_menubutton.png</string>
-				<string>swift_menubutton.png</string>
+				<string>swiftreflogo.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>{320, 417}</string>
 				<string>{301, 57}</string>
 				<string>{301, 57}</string>
+				<string>{141, 77}</string>
 				<string>{17, 17}</string>
 				<string>{58, 41}</string>
-				<string>{301, 57}</string>
-				<string>{301, 57}</string>
+				<string>{161, 77}</string>
 			</object>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">301</string>
