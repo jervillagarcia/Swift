@@ -48,7 +48,7 @@
 {
     [super viewDidLoad];
     
-    btnMail = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mail_icon.png" ] style:UIBarButtonItemStyleBordered target:self action:nil];
+    btnMail = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mail_icon.png" ] style:UIBarButtonItemStyleBordered target:self action:@selector(sendToMail)];
     
 //    [self.navigationController.navigationBar.topItem setRightBarButtonItem:btnMail];
     [self.navigationItem setRightBarButtonItem:btnMail];
@@ -74,6 +74,14 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)sendToMail {
+    NSString *eMailFormatBody = [NSString stringWithFormat:@"<table<tr><td style='text-align:right'><b>Name</b>:</td><td>%@</td></tr><tr><td style='text-align:right'><b>Branch</b>:</td><td>%@</td></tr><tr><td style='text-align:right'><b>Address:<b/></td><td>%@</td></tr><tr><td style='text-align:right'><b>Postal code:<b/></td><td>%@</td></tr><tr><td style='text-align:right'><b>City/Town:<b/></td><td>%@</td></tr><tr><td style='text-align:right'><b>Country:<b/></td><td>%@</td></tr><tr><td style='text-align:right'><b>BIC:<b/></td><td>%@</td></tr></table>", bank.NAME, bank.LOCATION, bank.ADDRESS, @"", bank.CITY, bank.COUNTRYKV, bank.IDENT.BIC];
+    NSString *encodedBody = [eMailFormatBody stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]; 
+    NSString *urlString = [NSString stringWithFormat:@"mailto:me@me.com?subject=HiPhone&body=%@", encodedBody];
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 @end

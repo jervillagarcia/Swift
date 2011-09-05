@@ -82,6 +82,8 @@
 		D5DFAE951414A54F00EE6CFC /* SwiftBankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DFAE941414A54F00EE6CFC /* SwiftBankCell.m */; };
 		D5DFAE9E1414A85300EE6CFC /* BankListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DFAE9C1414A85200EE6CFC /* BankListViewController.m */; };
 		D5DFAE9F1414A85300EE6CFC /* BankListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5DFAE9D1414A85200EE6CFC /* BankListViewController.xib */; };
+		D5DFAEA21414C8A100EE6CFC /* Fault.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DFAEA11414C8A100EE6CFC /* Fault.m */; };
+		D5DFAEA51414D4C100EE6CFC /* NetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DFAEA41414D4C000EE6CFC /* NetworkUtil.m */; };
 		D5E9B65513FB51AC006DCDB3 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E9B65413FB51AC006DCDB3 /* MenuViewController.xib */; };
 		D5E9B65D13FB5568006DCDB3 /* SwiftButtonBlue.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E9B65C13FB5568006DCDB3 /* SwiftButtonBlue.m */; };
 		D5E9B66113FB594A006DCDB3 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E9B66013FB594A006DCDB3 /* MenuViewController.m */; };
@@ -204,6 +206,10 @@
 		D5DFAE9B1414A85100EE6CFC /* BankListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankListViewController.h; sourceTree = "<group>"; };
 		D5DFAE9C1414A85200EE6CFC /* BankListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankListViewController.m; sourceTree = "<group>"; };
 		D5DFAE9D1414A85200EE6CFC /* BankListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankListViewController.xib; sourceTree = "<group>"; };
+		D5DFAEA01414C8A100EE6CFC /* Fault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fault.h; sourceTree = "<group>"; };
+		D5DFAEA11414C8A100EE6CFC /* Fault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fault.m; sourceTree = "<group>"; };
+		D5DFAEA31414D4BF00EE6CFC /* NetworkUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkUtil.h; sourceTree = "<group>"; };
+		D5DFAEA41414D4C000EE6CFC /* NetworkUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkUtil.m; sourceTree = "<group>"; };
 		D5E9B65413FB51AC006DCDB3 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		D5E9B65B13FB5568006DCDB3 /* SwiftButtonBlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftButtonBlue.h; sourceTree = "<group>"; };
 		D5E9B65C13FB5568006DCDB3 /* SwiftButtonBlue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftButtonBlue.m; sourceTree = "<group>"; };
@@ -428,6 +434,8 @@
 				D5DCDA061408A7CC00786D6A /* Bank.m */,
 				D09E5D4D141090A600EFA1D6 /* Country.h */,
 				D09E5D4E141090A700EFA1D6 /* Country.m */,
+				D5DFAEA01414C8A100EE6CFC /* Fault.h */,
+				D5DFAEA11414C8A100EE6CFC /* Fault.m */,
 			);
 			name = ManagedObjects;
 			sourceTree = "<group>";
@@ -446,6 +454,8 @@
 				D0DF2E7F140C661A00339174 /* XmlParser.m */,
 				D09E5D511410C18400EFA1D6 /* CountryParser.h */,
 				D09E5D521410C18400EFA1D6 /* CountryParser.m */,
+				D5DFAEA31414D4BF00EE6CFC /* NetworkUtil.h */,
+				D5DFAEA41414D4C000EE6CFC /* NetworkUtil.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -670,6 +680,8 @@
 				D5DFAE92141493D100EE6CFC /* SwiftCountryCell.m in Sources */,
 				D5DFAE951414A54F00EE6CFC /* SwiftBankCell.m in Sources */,
 				D5DFAE9E1414A85300EE6CFC /* BankListViewController.m in Sources */,
+				D5DFAEA21414C8A100EE6CFC /* Fault.m in Sources */,
+				D5DFAEA51414D4C100EE6CFC /* NetworkUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

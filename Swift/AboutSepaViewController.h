@@ -10,7 +10,11 @@
 
 
 @interface AboutSepaViewController : UIViewController {
-    
+    IBOutlet UIWebView *webView;
+    IBOutlet UIActivityIndicatorView *activityInd;
 }
+
+@property(nonatomic,retain) UIWebView *webView;
+@property(nonatomic, retain) UIActivityIndicatorView *activityInd;
 
 @end

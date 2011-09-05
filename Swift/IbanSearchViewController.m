@@ -10,6 +10,7 @@
 #import "WSFactory.h"
 #import "BankSearchViewController.h"
 #import "BankListViewController.h"
+#import "NetworkUtil.h"
 
 @implementation IbanSearchViewController
 
@@ -68,7 +69,13 @@
 #pragma mark Actions (Buttons)
 #pragma mark -
 - (IBAction)clickSearch:(id)sender {
-    [self performSelector:@selector(fetchBank)];
+    if ([NetworkUtil checkifConnected]) {
+        [self performSelector:@selector(fetchBank)];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Problem" message:@"Could not establish internet connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+    }
 }
 
 - (IBAction)clickClear:(id)sender {

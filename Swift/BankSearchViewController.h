@@ -32,6 +32,6 @@
 @property (nonatomic, retain) UILabel * lblBankId;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil bank:(Bank*)bank;
-
+- (void)sendToMail;
 
 @end

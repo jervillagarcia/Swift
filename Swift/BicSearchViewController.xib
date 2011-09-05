@@ -161,6 +161,7 @@
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
+						<int key="IBUIClearButtonMode">1</int>
 					</object>
 					<object class="IBUIButton" id="1043601200">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -286,6 +287,7 @@
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
+								<int key="IBUIClearButtonMode">3</int>
 							</object>
 							<object class="IBUITextField" id="1000876968">
 								<reference key="NSNextResponder" ref="330544439"/>
@@ -312,6 +314,7 @@
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
+								<int key="IBUIClearButtonMode">1</int>
 							</object>
 							<object class="IBUIImageView" id="550824824">
 								<reference key="NSNextResponder" ref="330544439"/>

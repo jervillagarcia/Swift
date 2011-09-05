@@ -11,6 +11,8 @@
 #import "CountryLookupViewController.h"
 #import "WSFactory.h"
 #import "BankListViewController.h"
+#import "Fault.h"
+#import "NetworkUtil.h"
 
 @implementation BicSearchViewController
 
@@ -77,20 +79,22 @@
 }
 
 -(IBAction)searchAction:(id)sender{
-    [self performSelector:@selector(fetchBank)];
-    
+    if ([NetworkUtil checkifConnected]) {
+        [self performSelector:@selector(fetchBank)];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Problem" message:@"Could not establish internet connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+    }
 }
 
 -(IBAction)countryLookupAction:(id)sender{
     CountryLookupViewController *viewController = [[CountryLookupViewController alloc] initWithStyle:UITableViewStylePlain delegate:self];
-    [self.navigationController presentModalViewController:viewController animated:YES];
+    [self.navigationController pushViewController:viewController animated:YES];
     [viewController release];
 }
 
 #pragma mark Action(Methods)
--(void)showCountryLookup{
-    
-}
 
 -(void)setMCountry:(Country *)mCountry {
     self.country = mCountry;
@@ -111,18 +115,35 @@
     
     if ([txtBic.text length] > 0)
         [ws validateBIC:[txtBic text]];
-    else
-        [ws validateWithPaymentCode:[txtNationalId text] countryCode:[country countryCode]];
+    else {
+        if (([txtNationalId.text length] > 0) || ([txtCountry.text length] > 0)) {
+            [ws validateWithPaymentCode:[txtNationalId text] countryCode:[country countryCode]];
+        }
+        
+    }
 	
     if([ws.wsResponse count] > 0) { 
-        BankListViewController *viewController = [[BankListViewController alloc] initWithNibName:@"BankListViewController" bundle:nil banks:ws.wsResponse];
-        [self.navigationController pushViewController:viewController animated:YES];
-        [viewController release];
         
-        [ws release];
-        [pool release];
+        if (([ws.wsResponse count] == 1) && [[ws.wsResponse objectAtIndex:0] isKindOfClass:[Fault class]]) {
+            [ws release];
+            [pool release];
+            
+            [processActivity dismissWithClickedButtonIndex:0 animated:YES];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message" message:[(Fault*)[ws.wsResponse objectAtIndex:0] faultstring] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            [alert release];
+            
+        } else {
+            BankListViewController *viewController = [[BankListViewController alloc] initWithNibName:@"BankListViewController" bundle:nil banks:ws.wsResponse];
+            [self.navigationController pushViewController:viewController animated:YES];
+            [viewController release];
+            
+            [ws release];
+            [pool release];
+            
+            [processActivity dismissWithClickedButtonIndex:0 animated:YES];
+        }
         
-        [processActivity dismissWithClickedButtonIndex:0 animated:YES];
     } else {
         
         [ws release];

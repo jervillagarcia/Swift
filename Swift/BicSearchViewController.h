@@ -44,7 +44,6 @@
 -(IBAction)searchAction:(id)sender;
 -(IBAction)countryLookupAction:(id)sender;
 
--(void)showCountryLookup;
 -(void)setMCountry:(Country *)mCountry;
 -(void)setOption2Hidden:(id)sender;
 

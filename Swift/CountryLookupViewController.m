@@ -93,11 +93,6 @@
     } else {
         [(SwiftCountryCell*)cell setMCountry:(Country*)[countryList objectAtIndex:[indexPath row]]];
     }
-    
-//    [cell.textLabel setText:[(Country*)[countryList objectAtIndex:[indexPath row]] name]];
-//    [cell.detailTextLabel setText:[(Country*)[countryList objectAtIndex:[indexPath row]] countryCode]];
-    
-//    [(SwiftCountryCell*)cell setCountry:(Country*)[countryList objectAtIndex:[indexPath row]]];
      
     return cell;
 }
@@ -108,7 +103,6 @@
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    [[(BicSearchViewController*)aDelegate txtCountry]  setText:[(Country*)[countryList objectAtIndex:[indexPath row]] name]];
     [(BicSearchViewController*)aDelegate setMCountry:(Country*)[countryList objectAtIndex:[indexPath row]]];
     [self.navigationController popViewControllerAnimated:YES];
     

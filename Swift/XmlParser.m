@@ -104,6 +104,8 @@
         currentSepa = [[Sepa alloc] init];
     }else if ([elementName  isEqualToString:@"BANK"]) {
         currentBank = [[Bank alloc] init];
+    }else if ([elementName  isEqualToString:@"Fault"]) {
+        item = [[NSClassFromString(@"Fault") alloc] init];
     }else{
         currentNodeName = [elementName copy];
         currentNodeContent = [[NSMutableString alloc] init];
@@ -161,6 +163,10 @@
         }
         [currentIdent release];
         currentIdent = nil;
+    }else if ([elementName  isEqualToString:@"Fault"]) {
+        [items addObject:item];
+        [item release];
+        item = nil;
     }else{
         if (currentIdent) {
             [currentIdent setValue:currentNodeContent forKey:elementName];
@@ -188,6 +194,11 @@
         } else if (currentBank) {
             [currentBank setValue:currentNodeContent forKey:elementName];
             
+            [currentNodeContent release];
+            currentNodeContent = nil;
+        } else {
+            [item setValue:currentNodeContent forKey:elementName];
+
             [currentNodeContent release];
             currentNodeContent = nil;
         }
