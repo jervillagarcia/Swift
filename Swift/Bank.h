@@ -26,7 +26,7 @@
 @property (nonatomic, retain) NSString * LOCATION;
 @property (nonatomic, retain) NSString * IBAN;
 @property (nonatomic, retain) NSString * COUNTRYKV;
-@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * NAME;
 @property (nonatomic, retain) NSString * CITY;
 @property (nonatomic, retain) NSString * ADDRESS;
 @property (nonatomic, retain) LocHeadBank * LOCHEADBANK;

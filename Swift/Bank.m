@@ -13,7 +13,7 @@
 @synthesize LOCATION;
 @synthesize IBAN;
 @synthesize COUNTRYKV;
-@synthesize name;
+@synthesize NAME;
 @synthesize CITY;
 @synthesize ADDRESS;
 @synthesize LOCHEADBANK;

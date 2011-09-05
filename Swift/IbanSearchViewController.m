@@ -8,6 +8,7 @@
 
 #import "IbanSearchViewController.h"
 #import "WSFactory.h"
+#import "BankSearchViewController.h"
 
 @implementation IbanSearchViewController
 
@@ -68,6 +69,12 @@
 
     [ws validateIBAN:txtIban.text];
 	
+    Bank *bank = [[ws wsResponse] objectAtIndex:0];
+    
+    BankSearchViewController *viewController = [[BankSearchViewController alloc] initWithNibName:@"BankSearchViewController" bundle:nil bank:bank];
+    [self.navigationController pushViewController:viewController animated:YES];
+    [viewController release];
+    
     [ws release];
 	[pool release];
 }

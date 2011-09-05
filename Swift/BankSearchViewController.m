@@ -11,11 +11,20 @@
 
 @implementation BankSearchViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+@synthesize bank;
+@synthesize lblBankName;
+@synthesize lblBranch;
+@synthesize lblAddress;
+@synthesize lblPostCode;
+@synthesize lblCity;
+@synthesize lblCountry;
+@synthesize lblBankId;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil bank:(Bank*)iBank
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.bank = iBank;
     }
     return self;
 }
@@ -44,6 +53,14 @@
 //    [self.navigationController.navigationBar.topItem setRightBarButtonItem:btnMail];
     [self.navigationItem setRightBarButtonItem:btnMail];
     // Do any additional setup after loading the view from its nib.
+    
+    [lblBankName        setText:bank.NAME];
+    [lblBranch          setText:bank.LOCATION];
+    [lblAddress         setText:bank.ADDRESS];
+    [lblPostCode        setText:@""];
+    [lblCity            setText:bank.CITY];
+    [lblCountry         setText:bank.COUNTRYKV];
+    [lblBankId          setText:bank.IDENT.BIC];
 }
 
 - (void)viewDidUnload
