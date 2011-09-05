@@ -9,6 +9,7 @@
 #import "IbanSearchViewController.h"
 #import "WSFactory.h"
 #import "BankSearchViewController.h"
+#import "BankListViewController.h"
 
 @implementation IbanSearchViewController
 
@@ -23,12 +24,15 @@
         // Custom initialization
         [self.tabBarItem setTitle:@"Check IBAN"];
         [self.tabBarItem setImage:[UIImage imageNamed:@"21-check_iban_logo.png"]];
+        
+        processActivity = [[UIActivityHUDDialog alloc] initWithTitle:@"Processing"];
     }
     return self;
 }
 
 - (void)dealloc
 {
+    [processActivity release];
     [super dealloc];
 }
 
@@ -64,24 +68,52 @@
 #pragma mark Actions (Buttons)
 #pragma mark -
 - (IBAction)clickSearch:(id)sender {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    WSFactory *ws = [[WSFactory alloc] init];
-
-    [ws validateIBAN:txtIban.text];
-	
-    Bank *bank = [[ws wsResponse] objectAtIndex:0];
-    
-    BankSearchViewController *viewController = [[BankSearchViewController alloc] initWithNibName:@"BankSearchViewController" bundle:nil bank:bank];
-    [self.navigationController pushViewController:viewController animated:YES];
-    [viewController release];
-    
-    [ws release];
-	[pool release];
+    [self performSelector:@selector(fetchBank)];
 }
 
 - (IBAction)clickClear:(id)sender {
     [txtIban setText:@""];
 }
 
+-(void)showActivity {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    [processActivity show];
+    [pool release];
+}
+
+-(void)fetchBank {
+    [NSThread detachNewThreadSelector:@selector(showActivity) toTarget:self withObject:nil];
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    WSFactory *ws = [[WSFactory alloc] init];
+    
+    [ws validateIBAN:txtIban.text];
+	
+    if([ws.wsResponse count] > 0) { 
+//        Bank *bank = [[ws wsResponse] objectAtIndex:0];
+//        
+//        BankSearchViewController *viewController = [[BankSearchViewController alloc] initWithNibName:@"BankSearchViewController" bundle:nil bank:bank];
+//        [self.navigationController pushViewController:viewController animated:YES];
+//        [viewController release];
+        
+        BankListViewController *viewController = [[BankListViewController alloc] initWithNibName:@"BankListViewController" bundle:nil banks:ws.wsResponse];
+        [self.navigationController pushViewController:viewController animated:YES];
+        [viewController release];
+
+        [ws release];
+        [pool release];
+        
+        [processActivity dismissWithClickedButtonIndex:0 animated:YES];
+    } else {
+        
+        [ws release];
+        [pool release];
+        
+        [processActivity dismissWithClickedButtonIndex:0 animated:YES];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message" message:@"No results found." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+        
+    }
+}
 
 @end

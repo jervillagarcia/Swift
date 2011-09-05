@@ -12,9 +12,10 @@
 @implementation UIActivityHUDDialog
 
 - (id)initWithTitle:(NSString*)message {
-	if (self = [[UIAlertView alloc] initWithTitle:message 
-							 message:@"" delegate:self 
-								cancelButtonTitle:nil otherButtonTitles:nil, nil]) 
+    self = [[UIAlertView alloc] initWithTitle:message 
+                                      message:@"" delegate:self 
+                            cancelButtonTitle:nil otherButtonTitles:nil, nil];
+	if (self) 
 	{
 		processActivity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
 		processActivity.center = self.center;

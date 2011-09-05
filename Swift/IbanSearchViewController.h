@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "UISwiftTextFieldDelegate.h"
+#import "UIActivityHUDDialog.h"
 
 @interface IbanSearchViewController : UIViewController<UITextFieldDelegate> {
     IBOutlet UITextField * txtIban;
     IBOutlet UIToolbar * keyboardToolbar;
     
     IBOutlet UISwiftTextFieldDelegate * textDelegate;
+    UIActivityHUDDialog * processActivity;
 }
 
 @property (nonatomic, retain) UITextField               * txtIban;

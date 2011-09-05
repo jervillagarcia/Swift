@@ -71,6 +71,7 @@
     [parser parseXMLData:dat fromURI:@"DATAROOT" toObject:@"Bank" parseError:&parseErr];
     
     [wsResponse release];
+    [parser release];
     self.wsResponse = [[[NSMutableArray alloc] initWithArray:[parser items]] autorelease];
 }
 

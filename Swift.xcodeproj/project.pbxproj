@@ -18,7 +18,6 @@
 		D09E5D821411C89500EFA1D6 /* BankSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E5D801411C89500EFA1D6 /* BankSearchViewController.m */; };
 		D09E5D831411C89500EFA1D6 /* BankSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D09E5D811411C89500EFA1D6 /* BankSearchViewController.xib */; };
 		D09E5D871411DA7D00EFA1D6 /* CountryLookupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E5D851411DA7B00EFA1D6 /* CountryLookupViewController.m */; };
-		D09E5D881411DA7D00EFA1D6 /* CountryLookupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D09E5D861411DA7C00EFA1D6 /* CountryLookupViewController.xib */; };
 		D0BD452214146C1000DCD882 /* UIActivityHUDDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BD452114146C1000DCD882 /* UIActivityHUDDialog.m */; };
 		D0C6AF1A1405F3F10082DB00 /* WSFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C6AF191405F3F10082DB00 /* WSFactory.m */; };
 		D0DF2E80140C661A00339174 /* XmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DF2E7F140C661A00339174 /* XmlParser.m */; };
@@ -78,6 +77,11 @@
 		D5DCDA0D1408A86400786D6A /* Sepa.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DCDA0C1408A86400786D6A /* Sepa.m */; };
 		D5DCDA151408A9FC00786D6A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DCDA141408A9FC00786D6A /* CoreData.framework */; };
 		D5DCDA1B1408ABCA00786D6A /* Routing.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DCDA1A1408ABCA00786D6A /* Routing.m */; };
+		D5DFAE8A14147B9100EE6CFC /* CountryLookupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5DFAE8914147B9100EE6CFC /* CountryLookupViewController.xib */; };
+		D5DFAE92141493D100EE6CFC /* SwiftCountryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DFAE91141493D100EE6CFC /* SwiftCountryCell.m */; };
+		D5DFAE951414A54F00EE6CFC /* SwiftBankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DFAE941414A54F00EE6CFC /* SwiftBankCell.m */; };
+		D5DFAE9E1414A85300EE6CFC /* BankListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DFAE9C1414A85200EE6CFC /* BankListViewController.m */; };
+		D5DFAE9F1414A85300EE6CFC /* BankListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5DFAE9D1414A85200EE6CFC /* BankListViewController.xib */; };
 		D5E9B65513FB51AC006DCDB3 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E9B65413FB51AC006DCDB3 /* MenuViewController.xib */; };
 		D5E9B65D13FB5568006DCDB3 /* SwiftButtonBlue.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E9B65C13FB5568006DCDB3 /* SwiftButtonBlue.m */; };
 		D5E9B66113FB594A006DCDB3 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E9B66013FB594A006DCDB3 /* MenuViewController.m */; };
@@ -118,7 +122,6 @@
 		D09E5D811411C89500EFA1D6 /* BankSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankSearchViewController.xib; sourceTree = "<group>"; };
 		D09E5D841411DA7B00EFA1D6 /* CountryLookupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryLookupViewController.h; sourceTree = "<group>"; };
 		D09E5D851411DA7B00EFA1D6 /* CountryLookupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryLookupViewController.m; sourceTree = "<group>"; };
-		D09E5D861411DA7C00EFA1D6 /* CountryLookupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryLookupViewController.xib; sourceTree = "<group>"; };
 		D0BD452014146C1000DCD882 /* UIActivityHUDDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIActivityHUDDialog.h; sourceTree = "<group>"; };
 		D0BD452114146C1000DCD882 /* UIActivityHUDDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIActivityHUDDialog.m; sourceTree = "<group>"; };
 		D0C6AF181405F3F10082DB00 /* WSFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFactory.h; sourceTree = "<group>"; };
@@ -193,6 +196,14 @@
 		D5DCDA141408A9FC00786D6A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D5DCDA191408ABCA00786D6A /* Routing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Routing.h; sourceTree = "<group>"; };
 		D5DCDA1A1408ABCA00786D6A /* Routing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Routing.m; sourceTree = "<group>"; };
+		D5DFAE8914147B9100EE6CFC /* CountryLookupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryLookupViewController.xib; sourceTree = "<group>"; };
+		D5DFAE90141493D100EE6CFC /* SwiftCountryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftCountryCell.h; sourceTree = "<group>"; };
+		D5DFAE91141493D100EE6CFC /* SwiftCountryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftCountryCell.m; sourceTree = "<group>"; };
+		D5DFAE931414A54F00EE6CFC /* SwiftBankCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftBankCell.h; sourceTree = "<group>"; };
+		D5DFAE941414A54F00EE6CFC /* SwiftBankCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftBankCell.m; sourceTree = "<group>"; };
+		D5DFAE9B1414A85100EE6CFC /* BankListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankListViewController.h; sourceTree = "<group>"; };
+		D5DFAE9C1414A85200EE6CFC /* BankListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankListViewController.m; sourceTree = "<group>"; };
+		D5DFAE9D1414A85200EE6CFC /* BankListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankListViewController.xib; sourceTree = "<group>"; };
 		D5E9B65413FB51AC006DCDB3 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		D5E9B65B13FB5568006DCDB3 /* SwiftButtonBlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftButtonBlue.h; sourceTree = "<group>"; };
 		D5E9B65C13FB5568006DCDB3 /* SwiftButtonBlue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftButtonBlue.m; sourceTree = "<group>"; };
@@ -310,7 +321,7 @@
 		D56131AF13FA91DB0026D7BF /* en.lproj */ = {
 			isa = PBXGroup;
 			children = (
-				D09E5D861411DA7C00EFA1D6 /* CountryLookupViewController.xib */,
+				D5DFAE9D1414A85200EE6CFC /* BankListViewController.xib */,
 				D09E5D811411C89500EFA1D6 /* BankSearchViewController.xib */,
 				D05EA9F613FD270300B8CD89 /* AboutSepaViewController.xib */,
 				D05EA9F113FD265800B8CD89 /* AboutSwiftViewController.xib */,
@@ -318,6 +329,7 @@
 				D5E9B66913FB8AB5006DCDB3 /* SwiftTabBarNavigationController.xib */,
 				D5E9B65413FB51AC006DCDB3 /* MenuViewController.xib */,
 				D5E9B66513FB73FB006DCDB3 /* BicSearchViewController.xib */,
+				D5DFAE8914147B9100EE6CFC /* CountryLookupViewController.xib */,
 			);
 			name = en.lproj;
 			sourceTree = "<group>";
@@ -447,6 +459,10 @@
 				D5E9B66313FB6C32006DCDB3 /* SwiftNavigationBar.m */,
 				D05EA9EC13FD21C600B8CD89 /* SwiftButtonPurple.h */,
 				D05EA9ED13FD21C600B8CD89 /* SwiftButtonPurple.m */,
+				D5DFAE90141493D100EE6CFC /* SwiftCountryCell.h */,
+				D5DFAE91141493D100EE6CFC /* SwiftCountryCell.m */,
+				D5DFAE931414A54F00EE6CFC /* SwiftBankCell.h */,
+				D5DFAE941414A54F00EE6CFC /* SwiftBankCell.m */,
 			);
 			name = CustomObjects;
 			sourceTree = "<group>";
@@ -470,6 +486,8 @@
 				D09E5D801411C89500EFA1D6 /* BankSearchViewController.m */,
 				D09E5D841411DA7B00EFA1D6 /* CountryLookupViewController.h */,
 				D09E5D851411DA7B00EFA1D6 /* CountryLookupViewController.m */,
+				D5DFAE9B1414A85100EE6CFC /* BankListViewController.h */,
+				D5DFAE9C1414A85200EE6CFC /* BankListViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -586,7 +604,8 @@
 				D5311D4C1404D2EA00ADB48A /* iphone3.png in Resources */,
 				D5311D4E1404D2FE00ADB48A /* iphone4.png in Resources */,
 				D09E5D831411C89500EFA1D6 /* BankSearchViewController.xib in Resources */,
-				D09E5D881411DA7D00EFA1D6 /* CountryLookupViewController.xib in Resources */,
+				D5DFAE8A14147B9100EE6CFC /* CountryLookupViewController.xib in Resources */,
+				D5DFAE9F1414A85300EE6CFC /* BankListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +667,9 @@
 				D09E5D821411C89500EFA1D6 /* BankSearchViewController.m in Sources */,
 				D09E5D871411DA7D00EFA1D6 /* CountryLookupViewController.m in Sources */,
 				D0BD452214146C1000DCD882 /* UIActivityHUDDialog.m in Sources */,
+				D5DFAE92141493D100EE6CFC /* SwiftCountryCell.m in Sources */,
+				D5DFAE951414A54F00EE6CFC /* SwiftBankCell.m in Sources */,
+				D5DFAE9E1414A85300EE6CFC /* BankListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

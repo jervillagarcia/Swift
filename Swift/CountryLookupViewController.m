@@ -7,21 +7,41 @@
 //
 
 #import "CountryLookupViewController.h"
-
+#import "SwiftAppDelegate.h"
+#import "CountryParser.h"
+#import "Country.h"
+#import "SwiftCountryCell.h"
+#import "BicSearchViewController.h"
 
 @implementation CountryLookupViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+@synthesize countryList;
+
+- (id)initWithStyle:(UITableViewStyle)style delegate:(id)mDelegate
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        filePath = [[NSBundle mainBundle] pathForResource:@"countries" ofType:@"xml"];
+        myData = [NSData dataWithContentsOfFile:filePath];
+
+        NSError *parseErr;
+        CountryParser *parser = [[CountryParser alloc] init];
+        [parser parseXMLData:myData fromURI:@"country" toObject:@"Country" parseError:&parseErr];
+        
+        [countryList release];
+        countryList = [[NSMutableArray alloc] initWithArray:[parser items]];
+        
+        aDelegate = mDelegate;
     }
     return self;
 }
 
 - (void)dealloc
 {
+//    [filePath release];
+//    [myData release];
+    [countryList release]; 
     [super dealloc];
 }
 
@@ -52,6 +72,46 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma TableView Methods
+- (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section {
+    return [countryList count];
+}
+
+- (UITableViewCell *)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"cell";
+    
+    SwiftCountryCell *cell = (SwiftCountryCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[SwiftCountryCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier country:(Country*)[countryList objectAtIndex:[indexPath row]]];
+        NSLog(@"Row: %i", indexPath.row);
+    } else {
+        [(SwiftCountryCell*)cell setMCountry:(Country*)[countryList objectAtIndex:[indexPath row]]];
+    }
+    
+//    [cell.textLabel setText:[(Country*)[countryList objectAtIndex:[indexPath row]] name]];
+//    [cell.detailTextLabel setText:[(Country*)[countryList objectAtIndex:[indexPath row]] countryCode]];
+    
+//    [(SwiftCountryCell*)cell setCountry:(Country*)[countryList objectAtIndex:[indexPath row]]];
+     
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50;
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    [[(BicSearchViewController*)aDelegate txtCountry]  setText:[(Country*)[countryList objectAtIndex:[indexPath row]] name]];
+    [(BicSearchViewController*)aDelegate setMCountry:(Country*)[countryList objectAtIndex:[indexPath row]]];
+    [self dismissModalViewControllerAnimated:YES];
+    
 }
 
 @end
