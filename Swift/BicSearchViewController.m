@@ -21,6 +21,8 @@
 @synthesize textDelegate;
 @synthesize textDelegate2;
 @synthesize keyboardToolbar;
+@synthesize curTxtField;
+@synthesize option2View;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -93,6 +95,7 @@
 -(void)setMCountry:(Country *)mCountry {
     self.country = mCountry;
     [txtCountry setText:[mCountry name]];
+    [txtCountry resignFirstResponder];
 }
 
 -(void)showActivity {
@@ -132,5 +135,37 @@
         
     }
 }
+
+-(BOOL)textFieldShouldClear:(UITextField *)textField {
+	isEditing = NO;
+	return YES;
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField { 
+    [txtCountry resignFirstResponder];
+    CountryLookupViewController *viewController = [[CountryLookupViewController alloc] initWithStyle:UITableViewStylePlain delegate:self];
+    [self.navigationController pushViewController:viewController animated:YES];
+    [viewController release];
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField {
+	[textField resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+	[textField resignFirstResponder];
+	return YES;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+	[textField resignFirstResponder];
+	return YES;
+}
+
+- (IBAction)setOption2Hidden:(id)sender {
+    [option2View setHidden:[txtBic.text length]>0?YES:NO];
+    [txtBic resignFirstResponder];
+}
+
 
 @end

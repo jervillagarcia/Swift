@@ -11,10 +11,12 @@
 #import "UIActivityHUDDialog.h"
 #import "UISwiftTextFieldDelegate.h"
 
-@interface BicSearchViewController : UIViewController {
+@interface BicSearchViewController : UIViewController<UITextFieldDelegate> {
     IBOutlet UITextField    *txtBic;
     IBOutlet UITextField    *txtNationalId;
     IBOutlet UITextField    *txtCountry;
+
+	BOOL			isEditing;
     
     Country                 *country;
     UIActivityHUDDialog     *processActivity;
@@ -22,8 +24,14 @@
     IBOutlet UISwiftTextFieldDelegate * textDelegate;
     IBOutlet UISwiftTextFieldDelegate * textDelegate2;
     IBOutlet UIToolbar * keyboardToolbar;
+	UITextField		*curTxtField;
+    
+    IBOutlet UIView          *option2View;
+    
 }
 
+@property(nonatomic, retain) UIView *option2View;
+@property(nonatomic, retain) UITextField *curTxtField;
 @property(nonatomic, retain) UIToolbar *keyboardToolbar;
 @property(nonatomic, retain) UISwiftTextFieldDelegate *textDelegate;
 @property(nonatomic, retain) UISwiftTextFieldDelegate *textDelegate2;
@@ -38,5 +46,6 @@
 
 -(void)showCountryLookup;
 -(void)setMCountry:(Country *)mCountry;
+-(void)setOption2Hidden:(id)sender;
 
 @end

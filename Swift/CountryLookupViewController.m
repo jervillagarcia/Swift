@@ -110,7 +110,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 //    [[(BicSearchViewController*)aDelegate txtCountry]  setText:[(Country*)[countryList objectAtIndex:[indexPath row]] name]];
     [(BicSearchViewController*)aDelegate setMCountry:(Country*)[countryList objectAtIndex:[indexPath row]]];
-    [self dismissModalViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
 

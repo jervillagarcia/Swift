@@ -168,7 +168,6 @@
 						<string key="NSFrame">{{136, 317}, {157, 37}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -415,7 +414,6 @@
 				<string key="NSFrameSize">{317, 44}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView"/>
 				<bool key="IBUIOpaque">NO</bool>
 				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -575,14 +573,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">delegate</string>
-						<reference key="source" ref="368023353"/>
-						<reference key="destination" ref="704827591"/>
-					</object>
-					<int key="connectionID">65</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">view</string>
 						<reference key="source" ref="704827591"/>
 						<reference key="destination" ref="330544439"/>
@@ -646,12 +636,28 @@
 					<int key="connectionID">86</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">hideKeyboard:</string>
-						<reference key="source" ref="510475687"/>
-						<reference key="destination" ref="161306348"/>
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="368023353"/>
+						<reference key="destination" ref="372490531"/>
 					</object>
-					<int key="connectionID">87</int>
+					<int key="connectionID">88</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">setOption2Hidden:</string>
+						<reference key="source" ref="510475687"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">89</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">option2View</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="330544439"/>
+					</object>
+					<int key="connectionID">90</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -931,7 +937,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">87</int>
+			<int key="maxID">90</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -983,6 +989,7 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>keyboardToolbar</string>
+							<string>option2View</string>
 							<string>textDelegate</string>
 							<string>textDelegate2</string>
 							<string>txtBic</string>
@@ -992,6 +999,7 @@
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UIToolbar</string>
+							<string>UIView</string>
 							<string>UISwiftTextFieldDelegate</string>
 							<string>UISwiftTextFieldDelegate</string>
 							<string>UITextField</string>
@@ -1004,6 +1012,7 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>keyboardToolbar</string>
+							<string>option2View</string>
 							<string>textDelegate</string>
 							<string>textDelegate2</string>
 							<string>txtBic</string>
@@ -1015,6 +1024,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">keyboardToolbar</string>
 								<string key="candidateClassName">UIToolbar</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">option2View</string>
+								<string key="candidateClassName">UIView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">textDelegate</string>
