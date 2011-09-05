@@ -69,6 +69,8 @@
 		D569967113FBBCEA002C75DD /* swift_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D569966C13FBBCEA002C75DD /* swift_icon.png */; };
 		D569967213FBBCEA002C75DD /* swift_topbar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D569966D13FBBCEA002C75DD /* swift_topbar_icon.png */; };
 		D56AD45C1400ABDA009BDE17 /* countries.xml in Resources */ = {isa = PBXBuildFile; fileRef = D56AD45B1400ABDA009BDE17 /* countries.xml */; };
+		D5D6CE231414EE7300AAA922 /* ApplyFinancialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D6CE211414EE7300AAA922 /* ApplyFinancialViewController.m */; };
+		D5D6CE241414EE7400AAA922 /* ApplyFinancialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5D6CE221414EE7300AAA922 /* ApplyFinancialViewController.xib */; };
 		D5DA1CD1140154A500D4095D /* SwiftConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DA1CD0140154A500D4095D /* SwiftConstant.m */; };
 		D5DA1CD5140161B700D4095D /* ErrorList.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5DA1CD4140161B700D4095D /* ErrorList.plist */; };
 		D5DCD9FF14089CE700786D6A /* Vortex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D5DCD9FD14089CE700786D6A /* Vortex.xcdatamodeld */; };
@@ -185,6 +187,9 @@
 		D569966D13FBBCEA002C75DD /* swift_topbar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = swift_topbar_icon.png; path = images/icon/swift_topbar_icon.png; sourceTree = "<group>"; };
 		D56AD45B1400ABDA009BDE17 /* countries.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = countries.xml; path = Resources/DataModel/countries.xml; sourceTree = "<group>"; };
 		D56AD45D1400B95E009BDE17 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D5D6CE201414EE7300AAA922 /* ApplyFinancialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyFinancialViewController.h; sourceTree = "<group>"; };
+		D5D6CE211414EE7300AAA922 /* ApplyFinancialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyFinancialViewController.m; sourceTree = "<group>"; };
+		D5D6CE221414EE7300AAA922 /* ApplyFinancialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplyFinancialViewController.xib; sourceTree = "<group>"; };
 		D5DA1CCF140154A500D4095D /* SwiftConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftConstant.h; sourceTree = "<group>"; };
 		D5DA1CD0140154A500D4095D /* SwiftConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftConstant.m; sourceTree = "<group>"; };
 		D5DA1CD4140161B700D4095D /* ErrorList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ErrorList.plist; sourceTree = "<group>"; };
@@ -327,6 +332,7 @@
 		D56131AF13FA91DB0026D7BF /* en.lproj */ = {
 			isa = PBXGroup;
 			children = (
+				D5D6CE221414EE7300AAA922 /* ApplyFinancialViewController.xib */,
 				D5DFAE9D1414A85200EE6CFC /* BankListViewController.xib */,
 				D09E5D811411C89500EFA1D6 /* BankSearchViewController.xib */,
 				D05EA9F613FD270300B8CD89 /* AboutSepaViewController.xib */,
@@ -498,6 +504,8 @@
 				D09E5D851411DA7B00EFA1D6 /* CountryLookupViewController.m */,
 				D5DFAE9B1414A85100EE6CFC /* BankListViewController.h */,
 				D5DFAE9C1414A85200EE6CFC /* BankListViewController.m */,
+				D5D6CE201414EE7300AAA922 /* ApplyFinancialViewController.h */,
+				D5D6CE211414EE7300AAA922 /* ApplyFinancialViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -616,6 +624,7 @@
 				D09E5D831411C89500EFA1D6 /* BankSearchViewController.xib in Resources */,
 				D5DFAE8A14147B9100EE6CFC /* CountryLookupViewController.xib in Resources */,
 				D5DFAE9F1414A85300EE6CFC /* BankListViewController.xib in Resources */,
+				D5D6CE241414EE7400AAA922 /* ApplyFinancialViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,6 +691,7 @@
 				D5DFAE9E1414A85300EE6CFC /* BankListViewController.m in Sources */,
 				D5DFAEA21414C8A100EE6CFC /* Fault.m in Sources */,
 				D5DFAEA51414D4C100EE6CFC /* NetworkUtil.m in Sources */,
+				D5D6CE231414EE7300AAA922 /* ApplyFinancialViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,8 +745,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Errol Villagarcia (B926DLSS68)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Errol Villagarcia (B926DLSS68)";
+				Dev_Prov_Setting = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -745,6 +756,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PROVISIONING_PROFILE = "BF34B9C3-1029-4C9D-B36A-04BB3C1306B7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BF34B9C3-1029-4C9D-B36A-04BB3C1306B7";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -753,13 +766,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				Dev_Prov_Setting = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Release;

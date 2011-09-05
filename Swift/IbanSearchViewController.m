@@ -23,6 +23,9 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        [arr release];
+        arr = nil;
+        
         [self.tabBarItem setTitle:@"Check IBAN"];
         [self.tabBarItem setImage:[UIImage imageNamed:@"21-check_iban_logo.png"]];
         
@@ -33,6 +36,7 @@
 
 - (void)dealloc
 {
+    [arr release];
     [processActivity release];
     [super dealloc];
 }
@@ -96,15 +100,12 @@
     [ws validateIBAN:txtIban.text];
 	
     if([ws.wsResponse count] > 0) { 
-//        Bank *bank = [[ws wsResponse] objectAtIndex:0];
-//        
-//        BankSearchViewController *viewController = [[BankSearchViewController alloc] initWithNibName:@"BankSearchViewController" bundle:nil bank:bank];
-//        [self.navigationController pushViewController:viewController animated:YES];
-//        [viewController release];
+        [arr release];
+        arr = [ws.wsResponse retain];
         
-        BankListViewController *viewController = [[BankListViewController alloc] initWithNibName:@"BankListViewController" bundle:nil banks:ws.wsResponse];
-        [self.navigationController pushViewController:viewController animated:YES];
-        [viewController release];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Validated OK." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Details", nil];
+        [alert show];
+        [alert release];
 
         [ws release];
         [pool release];
@@ -122,5 +123,27 @@
         
     }
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 1 : 
+        {
+            if ([arr count] == 1) {
+                BankSearchViewController *viewController = [[BankSearchViewController alloc] initWithNibName:@"BankSearchViewController" bundle:nil bank:(Bank*)[arr objectAtIndex:0]];
+                [self.navigationController pushViewController:viewController animated:YES];
+                [viewController release];
+            } else {
+                BankListViewController *viewController = [[BankListViewController alloc] initWithNibName:@"BankListViewController" bundle:nil banks:arr];
+                [self.navigationController pushViewController:viewController animated:YES];
+                [viewController release];
+            }
+            break;
+        }    
+        default:
+            break;
+    }
+    
+}
+
 
 @end

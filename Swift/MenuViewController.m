@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 #import "SwiftTabBarNavigationController.h"
+#import "ApplyFinancialViewController.h"
 
 
 @implementation MenuViewController
@@ -89,6 +90,12 @@
     [navTab release];
     
     [self.navigationController setNavigationBarHidden:YES];  
+}
+
+-(IBAction)clickApplyFinancial:(id)sender {
+    ApplyFinancialViewController *viewController = [[ApplyFinancialViewController alloc] initWithNibName:@"ApplyFinancialViewController" bundle:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
+    [viewController release];
 }
 
 @end

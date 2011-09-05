@@ -10,11 +10,14 @@
 #import "UISwiftTextFieldDelegate.h"
 #import "UIActivityHUDDialog.h"
 
-@interface IbanSearchViewController : UIViewController<UITextFieldDelegate> {
+@interface IbanSearchViewController : UIViewController<UITextFieldDelegate, UIAlertViewDelegate> {
     IBOutlet UITextField * txtIban;
     IBOutlet UIToolbar * keyboardToolbar;
     
     IBOutlet UISwiftTextFieldDelegate * textDelegate;
+    
+    NSArray *arr;
+    
     UIActivityHUDDialog * processActivity;
 }
 
