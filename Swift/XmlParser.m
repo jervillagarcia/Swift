@@ -31,28 +31,6 @@
 	return items;
 }
 
-/*
-- (id)parseXMLData:(NSData *)data toObject:(NSString *)aClassName parseError:(NSError **)error
-{
-	[items release];
-	items = [[NSMutableArray alloc] init];
-	
-	[className release];
-	className = [aClassName copy];//[[NSString alloc] initWithString:aClassName];
-	
-	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
-	[parser setDelegate:self];
-	[parser setShouldProcessNamespaces:YES];
-	[parser setShouldReportNamespacePrefixes:YES];
-	[parser setShouldResolveExternalEntities:YES];
-	
-	[parser parse];
-	[parser release];
-
-	return self;
-}
-*/
-
 - (id)parseXMLData:(NSData *)data fromURI:(NSString*)fromURI toObject:(NSString *)aClassName parseError:(NSError **)error
 {
 	
@@ -83,17 +61,6 @@
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
-//	if([[elementName uppercaseString] isEqualToString:[uri uppercaseString]] || [elementName isEqualToString:@"Fault"]) {
-//		item = [[NSClassFromString([[elementName uppercaseString] isEqualToString:[uri uppercaseString]]?className:@"Fault") alloc] init];
-//	}
-//	else {
-//        if ([subItems 
-//        subitem = [[NSClassFromString([[elementName uppercaseString] isEqualToString:[uri uppercaseString]]?className:@"Fault") alloc] init];
-//		if (![elementName isEqualToString:@"NULL"]){
-//			currentNodeName = [elementName copy];
-//			currentNodeContent = [[NSMutableString alloc] init];
-//		}
-//	}
     if ([elementName  isEqualToString:@"IDENT"]) {
         currentIdent = [[Ident alloc] init];
     }else if ([elementName  isEqualToString:@"ROUTING"]) {
@@ -106,6 +73,8 @@
         currentBank = [[Bank alloc] init];
     }else if ([elementName  isEqualToString:@"Fault"]) {
         item = [[NSClassFromString(@"Fault") alloc] init];
+    }else if ([elementName  isEqualToString:@"ERROR"]) {
+        item = [[NSClassFromString(@"Error") alloc] init];
     }else{
         currentNodeName = [elementName copy];
         currentNodeContent = [[NSMutableString alloc] init];
@@ -114,23 +83,6 @@
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
-//	if([elementName isEqualToString:uri] || [elementName isEqualToString:@"Fault"]) {
-//		
-//		[items addObject:item];
-//		[item release];
-//		item = nil;
-//	}
-//	else if([elementName isEqualToString:currentNodeName] && [elementName isEqualToString:@"Header"] == NO) {
-//		if (![elementName isEqualToString:@"NULL"]){
-//            [item setValue:currentNodeContent forKey:elementName];
-//			
-//			[currentNodeContent release];
-//			currentNodeContent = nil;
-//			
-//			[currentNodeName release];
-//			currentNodeName = nil;
-//		}
-//	}
     
     if ([elementName  isEqualToString:@"BANK"]) {
         [items addObject:currentBank];
@@ -148,7 +100,6 @@
         [currentLocHeadBank release];
         currentLocHeadBank = nil;
     }else if ([elementName  isEqualToString:@"ROUTING"]) {
-//        [currentLocHeadBank add
         [currentLocHeadBank addRouting:currentRouting];
         
         [currentRouting release];
@@ -164,6 +115,10 @@
         [currentIdent release];
         currentIdent = nil;
     }else if ([elementName  isEqualToString:@"Fault"]) {
+        [items addObject:item];
+        [item release];
+        item = nil;
+    }else if ([elementName  isEqualToString:@"ERROR"]) {
         [items addObject:item];
         [item release];
         item = nil;

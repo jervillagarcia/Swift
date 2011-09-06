@@ -77,6 +77,7 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    wait((NSInteger*)500000);
     [activityInd stopAnimating];
     
 }

@@ -10,6 +10,8 @@
 #import "WSFactory.h"
 #import "BankSearchViewController.h"
 #import "BankListViewController.h"
+#import "Fault.h"
+#import "Error.h"
 #import "NetworkUtil.h"
 
 @implementation IbanSearchViewController
@@ -73,13 +75,13 @@
 #pragma mark Actions (Buttons)
 #pragma mark -
 - (IBAction)clickSearch:(id)sender {
-//    if ([NetworkUtil checkifConnected]) {
+    if ([NetworkUtil checkifConnected]) {
         [self performSelector:@selector(fetchBank)];
-//    } else {
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Problem" message:@"Could not establish internet connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//        [alert show];
-//        [alert release];
-//    }
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Problem" message:@"Could not establish internet connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+    }
 }
 
 - (IBAction)clickClear:(id)sender {
@@ -100,17 +102,35 @@
     [ws validateIBAN:txtIban.text];
 	
     if([ws.wsResponse count] > 0) { 
-        [arr release];
-        arr = [ws.wsResponse retain];
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Validated OK." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Details", nil];
-        [alert show];
-        [alert release];
-
-        [ws release];
-        [pool release];
-        
-        [processActivity dismissWithClickedButtonIndex:0 animated:YES];
+        if (([ws.wsResponse count] == 1) && [[ws.wsResponse objectAtIndex:0] isKindOfClass:[Fault class]]) {
+            [ws release];
+            [pool release];
+            
+            [processActivity dismissWithClickedButtonIndex:0 animated:YES];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message" message:[(Fault*)[ws.wsResponse objectAtIndex:0] faultstring] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            [alert release];
+        } else if (([ws.wsResponse count] == 1) && [[ws.wsResponse objectAtIndex:0] isKindOfClass:[Error class]]) {
+            [ws release];
+            [pool release];
+            
+            [processActivity dismissWithClickedButtonIndex:0 animated:YES];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[(Error*)[ws.wsResponse objectAtIndex:0] CODE] message:[(Error*)[ws.wsResponse objectAtIndex:0] DESCRIPTION] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            [alert release];
+        } else {
+            [arr release];
+            arr = [ws.wsResponse retain];
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Validated OK." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Details", nil];
+            [alert show];
+            [alert release];
+            
+            [ws release];
+            [pool release];
+            
+            [processActivity dismissWithClickedButtonIndex:0 animated:YES];
+        }
     } else {
         
         [ws release];

@@ -83,6 +83,7 @@
 		D5DCDA0D1408A86400786D6A /* Sepa.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DCDA0C1408A86400786D6A /* Sepa.m */; };
 		D5DCDA151408A9FC00786D6A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DCDA141408A9FC00786D6A /* CoreData.framework */; };
 		D5DCDA1B1408ABCA00786D6A /* Routing.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DCDA1A1408ABCA00786D6A /* Routing.m */; };
+		D5DE8A65141636D000F220A3 /* Error.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DE8A64141636D000F220A3 /* Error.m */; };
 		D5DFAE8A14147B9100EE6CFC /* CountryLookupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5DFAE8914147B9100EE6CFC /* CountryLookupViewController.xib */; };
 		D5DFAE92141493D100EE6CFC /* SwiftCountryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DFAE91141493D100EE6CFC /* SwiftCountryCell.m */; };
 		D5DFAE951414A54F00EE6CFC /* SwiftBankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DFAE941414A54F00EE6CFC /* SwiftBankCell.m */; };
@@ -144,7 +145,7 @@
 		D531090814094C4C00D5BEA2 /* Ident.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ident.m; sourceTree = "<group>"; };
 		D5311D4B1404D2EA00ADB48A /* iphone3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iphone3.png; path = ../iphone3.png; sourceTree = "<group>"; };
 		D5311D4D1404D2FE00ADB48A /* iphone4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iphone4.png; path = ../iphone4.png; sourceTree = "<group>"; };
-		D561316A13FA2D5F0026D7BF /* Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D561316A13FA2D5F0026D7BF /* Validate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Validate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D561316E13FA2D5F0026D7BF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D561317013FA2D5F0026D7BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D561317213FA2D5F0026D7BF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -211,6 +212,8 @@
 		D5DCDA141408A9FC00786D6A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D5DCDA191408ABCA00786D6A /* Routing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Routing.h; sourceTree = "<group>"; };
 		D5DCDA1A1408ABCA00786D6A /* Routing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Routing.m; sourceTree = "<group>"; };
+		D5DE8A63141636D000F220A3 /* Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Error.h; sourceTree = "<group>"; };
+		D5DE8A64141636D000F220A3 /* Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Error.m; sourceTree = "<group>"; };
 		D5DFAE8914147B9100EE6CFC /* CountryLookupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryLookupViewController.xib; sourceTree = "<group>"; };
 		D5DFAE90141493D100EE6CFC /* SwiftCountryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftCountryCell.h; sourceTree = "<group>"; };
 		D5DFAE91141493D100EE6CFC /* SwiftCountryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftCountryCell.m; sourceTree = "<group>"; };
@@ -276,7 +279,7 @@
 		D561316B13FA2D5F0026D7BF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D561316A13FA2D5F0026D7BF /* Swift.app */,
+				D561316A13FA2D5F0026D7BF /* Validate.app */,
 				D561318E13FA2D600026D7BF /* SwiftTests.octest */,
 			);
 			name = Products;
@@ -454,6 +457,8 @@
 				D09E5D4E141090A700EFA1D6 /* Country.m */,
 				D5DFAEA01414C8A100EE6CFC /* Fault.h */,
 				D5DFAEA11414C8A100EE6CFC /* Fault.m */,
+				D5DE8A63141636D000F220A3 /* Error.h */,
+				D5DE8A64141636D000F220A3 /* Error.m */,
 			);
 			name = ManagedObjects;
 			sourceTree = "<group>";
@@ -539,7 +544,7 @@
 			);
 			name = Swift;
 			productName = Swift;
-			productReference = D561316A13FA2D5F0026D7BF /* Swift.app */;
+			productReference = D561316A13FA2D5F0026D7BF /* Validate.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D561318D13FA2D600026D7BF /* SwiftTests */ = {
@@ -708,6 +713,7 @@
 				D5DFAEA21414C8A100EE6CFC /* Fault.m in Sources */,
 				D5DFAEA51414D4C100EE6CFC /* NetworkUtil.m in Sources */,
 				D5D6CE231414EE7300AAA922 /* ApplyFinancialViewController.m in Sources */,
+				D5DE8A65141636D000F220A3 /* Error.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -800,13 +806,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Errol Villagarcia (B926DLSS68)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Errol Villagarcia (B926DLSS68)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Swift/Swift-Prefix.pch";
 				INFOPLIST_FILE = "Swift/Swift-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Validate;
+				PROVISIONING_PROFILE = "F0FA5274-4611-4274-8941-FFDAC609548F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F0FA5274-4611-4274-8941-FFDAC609548F";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -820,7 +830,7 @@
 				GCC_PREFIX_HEADER = "Swift/Swift-Prefix.pch";
 				INFOPLIST_FILE = "Swift/Swift-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Validate;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

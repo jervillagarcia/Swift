@@ -12,6 +12,7 @@
 #import "WSFactory.h"
 #import "BankListViewController.h"
 #import "Fault.h"
+#import "Error.h"
 #import "NetworkUtil.h"
 
 @implementation BicSearchViewController
@@ -81,13 +82,13 @@
 }
 
 -(IBAction)searchAction:(id)sender{
-//    if ([NetworkUtil checkifConnected]) {
+    if ([NetworkUtil checkifConnected]) {
         [self performSelector:@selector(fetchBank)];
-//    } else {
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Problem" message:@"Could not establish internet connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//        [alert show];
-//        [alert release];
-//    }
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Problem" message:@"Could not establish internet connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+    }
 }
 
 -(IBAction)countryLookupAction:(id)sender{
@@ -134,8 +135,18 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message" message:[(Fault*)[ws.wsResponse objectAtIndex:0] faultstring] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
             [alert release];
+        } else if (([ws.wsResponse count] == 1) && [[ws.wsResponse objectAtIndex:0] isKindOfClass:[Error class]]) {
+            [ws release];
+            [pool release];
             
+            [processActivity dismissWithClickedButtonIndex:0 animated:YES];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[(Error*)[ws.wsResponse objectAtIndex:0] CODE] message:[(Error*)[ws.wsResponse objectAtIndex:0] DESCRIPTION] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            [alert release];
         } else {
+            [txtBic setText:@""];
+            [self performSelector:@selector(setOption2Hidden:)];
+
             BankListViewController *viewController = [[BankListViewController alloc] initWithNibName:@"BankListViewController" bundle:nil banks:ws.wsResponse];
             [self.navigationController pushViewController:viewController animated:YES];
             [viewController release];
