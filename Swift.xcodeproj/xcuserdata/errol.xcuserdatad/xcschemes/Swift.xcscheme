@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D561316913FA2D5F0026D7BF"
-               BuildableName = "Swift.app"
+               BuildableName = "Validate.app"
                BlueprintName = "Swift"
                ReferencedContainer = "container:Swift.xcodeproj">
             </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D561316913FA2D5F0026D7BF"
-            BuildableName = "Swift.app"
+            BuildableName = "Validate.app"
             BlueprintName = "Swift"
             ReferencedContainer = "container:Swift.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D561316913FA2D5F0026D7BF"
-            BuildableName = "Swift.app"
+            BuildableName = "Validate.app"
             BlueprintName = "Swift"
             ReferencedContainer = "container:Swift.xcodeproj">
          </BuildableReference>

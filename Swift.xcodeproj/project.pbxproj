@@ -825,12 +825,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Apply Financial Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Apply Financial Ltd";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Swift/Swift-Prefix.pch";
 				INFOPLIST_FILE = "Swift/Swift-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = Validate;
+				PROVISIONING_PROFILE = "137CDBCC-0176-4AC1-88CE-273BA82DB184";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "137CDBCC-0176-4AC1-88CE-273BA82DB184";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
