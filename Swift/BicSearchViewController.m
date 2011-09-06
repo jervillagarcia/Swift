@@ -76,6 +76,8 @@
     [txtBic setText:@""];
     [txtCountry setText:@""];
     [txtNationalId setText:@""];
+    
+    [self performSelector:@selector(setOption2Hidden:)];
 }
 
 -(IBAction)searchAction:(id)sender{
