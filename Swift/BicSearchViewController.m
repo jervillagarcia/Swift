@@ -112,15 +112,26 @@
 }
 
 -(void)fetchBank {
-    [NSThread detachNewThreadSelector:@selector(showActivity) toTarget:self withObject:nil];
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     WSFactory *ws = [[WSFactory alloc] init];
     
-    if ([txtBic.text length] > 0)
+    if ([txtBic.text length] > 0){
+        [NSThread detachNewThreadSelector:@selector(showActivity) toTarget:self withObject:nil];
         [ws validateBIC:[txtBic text]];
-    else {
+    } else {
         if (([txtNationalId.text length] > 0) || ([txtCountry.text length] > 0)) {
-            [ws validateWithPaymentCode:[txtNationalId text] countryCode:[country countryCode]];
+            if ([txtCountry.text length] > 0) {
+                [NSThread detachNewThreadSelector:@selector(showActivity) toTarget:self withObject:nil];
+                [ws validateWithPaymentCode:[txtNationalId text] countryCode:[country countryCode]];
+            } else {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message" message:@"Empty country field." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+                [alert release];
+            }
+        } else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message" message:@"Empty search filter." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            [alert release];
         }
         
     }
@@ -161,12 +172,11 @@
         
         [ws release];
         [pool release];
-        
-        [processActivity dismissWithClickedButtonIndex:0 animated:YES];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message" message:@"No results found." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-        [alert release];
-        
+        if ((([txtNationalId.text length] > 0) && ([txtCountry.text length] > 0)) || ([txtBic.text length] > 0)) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message" message:@"No results found." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            [alert release];
+        }
     }
 }
 
